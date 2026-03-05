@@ -7,3 +7,9 @@ dependencies = [
     "uvicorn[standard]>=0.32",
     "pyoxigraph>=0.3",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",
+]
