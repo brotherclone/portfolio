@@ -1,0 +1,2041 @@
+{
+  "@context": {
+    "gw": "https://gabrielwalsh.com/ontology#",
+    "gwi": "https://gabrielwalsh.com/instances#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/"
+  },
+  "@graph": [
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#summary": "Graduate studio instruction at MICA (MFA Graphic Design) and Johns Hopkins continuing education. Interaction design, UX, digital strategy. Concurrent with agency work."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#taughtAt": {
+        "@id": "https://gabrielwalsh.com/instances#org_jhu"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#taughtAt": {
+        "@id": "https://gabrielwalsh.com/instances#org_mica"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_productStrategy"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_uxResearch"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_education"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#engagementType": "direct"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#workedAt": {
+        "@id": "https://gabrielwalsh.com/instances#org_mica"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#partOfEra": {
+        "@id": "https://gabrielwalsh.com/instances#era_agency"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.55",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#category": "strategy"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#confidential": {
+        "@value": "false",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2018",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2012",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Graduate Design Instruction"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_teaching",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Project"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#summary": "Product architecture at Oracle Energy & Water. Ontology-driven data modelling, agentic pipeline integration, entity resolution infrastructure. Details NDA \u2014 graph topology is the evidence."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#producedArtifact": {
+        "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_mcp"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_linkml"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_python"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_ml"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_graphdb"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_enterprise"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#engagementType": "direct"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#workedAt": {
+        "@id": "https://gabrielwalsh.com/instances#org_oracle"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#partOfEra": {
+        "@id": "https://gabrielwalsh.com/instances#era_agentic"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.95",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#confidential": {
+        "@value": "true",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "0",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2021",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Enterprise Ontology & Agentic Interface"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_oracle",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Project"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#summary": "Product architecture and digital transformation at Moleskine, Milan. Consumer product meets digital platform \u2014 global brand, international team."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_contentStrategy"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_uxResearch"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_productStrategy"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_contentModeling"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_consumerProduct"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#engagementType": "direct"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#workedAt": {
+        "@id": "https://gabrielwalsh.com/instances#org_moleskine"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#partOfEra": {
+        "@id": "https://gabrielwalsh.com/instances#era_international"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.8",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#category": "strategy"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#confidential": {
+        "@value": "false",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2021",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2017",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Moleskine Digital Transformation"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_moleskine",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Project"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#summary": "UX consulting for AXA Investment Managers through Huge. Digital investor portal redesign. Project-based engagement."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_productStrategy"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_uxResearch"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_finance"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#engagementType": "consulting"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#deliveredFor": {
+        "@id": "https://gabrielwalsh.com/instances#org_axa"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#workedAt": {
+        "@id": "https://gabrielwalsh.com/instances#org_huge"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#partOfEra": {
+        "@id": "https://gabrielwalsh.com/instances#era_agency"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.6",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#confidential": {
+        "@value": "false",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2014",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2013",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "http://www.w3.org/2000/01/rdf-schema#label": "AXA Investment Managers UX"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_huge_axa",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Project"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#summary": "Embedded UX and content strategy lead for the Robert Wood Johnson Foundation's digital platform rebuild. Employed by Threespot, working on-site at RWJF."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_uxResearch"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_contentStrategy"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_contentModeling"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_nonprofit"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#engagementType": "embedded"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#deliveredFor": {
+        "@id": "https://gabrielwalsh.com/instances#org_rwj"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#workedAt": {
+        "@id": "https://gabrielwalsh.com/instances#org_threespot"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#partOfEra": {
+        "@id": "https://gabrielwalsh.com/instances#era_agency"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.65",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#category": "strategy"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#confidential": {
+        "@value": "false",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2013",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2011",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Robert Wood Johnson Foundation Digital Platform"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_threespot_rwj",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Project"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#summary": "Enterprise UX at Adobe's federal and enterprise division in McLean. Design systems, content modelling, product strategy for B2B tools."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_contentStrategy"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_productStrategy"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_uxResearch"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_contentModeling"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_enterprise"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#engagementType": "direct"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#workedAt": {
+        "@id": "https://gabrielwalsh.com/instances#org_adobe"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#partOfEra": {
+        "@id": "https://gabrielwalsh.com/instances#era_agency"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.75",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#confidential": {
+        "@value": "false",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2017",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2014",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Adobe Enterprise UX"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_adobe",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Project"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#summary": "Ten years architecting the integration of physical play and digital experience across global markets. NYC, London, and Denmark. Before IoT was a category."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_uxResearch"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_arduino"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_animation3d"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#usedSkill": {
+        "@id": "https://gabrielwalsh.com/instances#skill_js"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#involvedConcept": {
+        "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_creativeTech"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_consumerProduct"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#engagementType": "direct"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#workedAt": {
+        "@id": "https://gabrielwalsh.com/instances#org_lego"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#partOfEra": {
+        "@id": "https://gabrielwalsh.com/instances#era_lego"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.9",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#confidential": {
+        "@value": "false",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2010",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2000",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "http://www.w3.org/2000/01/rdf-schema#label": "LEGO Physical-Digital Integration"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#proj_lego",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Project"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames",
+      "https://gabrielwalsh.com/ontology#summary": "Original music project. Electronic / ambient. Full ownership."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.8",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames",
+      "https://gabrielwalsh.com/ontology#confidential": {
+        "@value": "false",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames",
+      "https://gabrielwalsh.com/ontology#category": "artifact"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames",
+      "https://gabrielwalsh.com/ontology#mediaType": "audio"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Earthly Frames"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Artifact"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site",
+      "https://gabrielwalsh.com/ontology#summary": "This site. Next.js + LinkML ontology + pyoxigraph + MCP server + AGUI agent interface + 3D force-directed knowledge graph."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.9",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site",
+      "https://gabrielwalsh.com/ontology#confidential": {
+        "@value": "false",
+        "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site",
+      "https://gabrielwalsh.com/ontology#category": "artifact"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site",
+      "https://gabrielwalsh.com/ontology#url": {
+        "@id": "https://gabrielwalsh.com"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site",
+      "https://gabrielwalsh.com/ontology#mediaType": "code"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Portfolio Site"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Artifact"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_audioProduction",
+      "https://gabrielwalsh.com/ontology#summary": "Electronic music composition, mixing, mastering. 20 years. Full ownership."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_audioProduction",
+      "https://gabrielwalsh.com/ontology#evidencedBy": {
+        "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_audioProduction",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.7",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_audioProduction",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "20",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_audioProduction",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_audioProduction",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Audio Production"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_audioProduction",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_contentStrategy",
+      "https://gabrielwalsh.com/ontology#summary": "Information architecture, content modelling, taxonomy design."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_contentStrategy",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.75",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_contentStrategy",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "18",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_contentStrategy",
+      "https://gabrielwalsh.com/ontology#category": "strategy"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_contentStrategy",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Content Strategy & IA"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_contentStrategy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_productStrategy",
+      "https://gabrielwalsh.com/ontology#summary": "Product vision, roadmap, stakeholder alignment. IC and leading small teams."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_productStrategy",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.8",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_productStrategy",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "15",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_productStrategy",
+      "https://gabrielwalsh.com/ontology#category": "strategy"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_productStrategy",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Product Strategy"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_productStrategy",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_uxResearch",
+      "https://gabrielwalsh.com/ontology#summary": "Generative and evaluative research. Enterprise and consumer contexts. Qual-heavy."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_uxResearch",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.8",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_uxResearch",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "20",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_uxResearch",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_uxResearch",
+      "http://www.w3.org/2000/01/rdf-schema#label": "UX Research"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_uxResearch",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_ml",
+      "https://gabrielwalsh.com/ontology#summary": "LangChain, RAG, entity resolution, AGUI streaming."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_ml",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.7",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_ml",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "7",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_ml",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_ml",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Machine Learning / LLM Pipelines"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_ml",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_arduino",
+      "https://gabrielwalsh.com/ontology#summary": "Embedded systems, sensor integration, tangible interfaces."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_arduino",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.75",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_arduino",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "18",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_arduino",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_arduino",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Arduino & Physical Computing"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_arduino",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_unity",
+      "https://gabrielwalsh.com/ontology#summary": "Interactive 3D, AR/VR prototyping, physical-digital experience prototypes."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_unity",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.7",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_unity",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "11",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_unity",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_unity",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Unity"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_unity",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_animation3d",
+      "https://gabrielwalsh.com/ontology#summary": "27 years. C4D, Blender, Maya. Motion graphics, architectural viz, character animation."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_animation3d",
+      "https://gabrielwalsh.com/ontology#evidencedBy": {
+        "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_animation3d",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.95",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_animation3d",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "27",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_animation3d",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_animation3d",
+      "http://www.w3.org/2000/01/rdf-schema#label": "3D Modelling & Animation"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_animation3d",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_linkml",
+      "https://gabrielwalsh.com/ontology#summary": "Schema-first ontology authoring. Generates OWL, Pydantic, JSON-LD, TypeScript from YAML."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_linkml",
+      "https://gabrielwalsh.com/ontology#evidencedBy": {
+        "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_linkml",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.5",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_linkml",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_linkml",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_linkml",
+      "http://www.w3.org/2000/01/rdf-schema#label": "LinkML"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_linkml",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_mcp",
+      "https://gabrielwalsh.com/ontology#summary": "Anthropic's tool protocol for agent-to-tool communication."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_mcp",
+      "https://gabrielwalsh.com/ontology#evidencedBy": {
+        "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_mcp",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.5",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_mcp",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "1",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_mcp",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_mcp",
+      "http://www.w3.org/2000/01/rdf-schema#label": "MCP (Model Context Protocol)"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_mcp",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_graphdb",
+      "https://gabrielwalsh.com/ontology#summary": "SPARQL, GraphDB, pyoxigraph, RDF/OWL/TTL."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_graphdb",
+      "https://gabrielwalsh.com/ontology#evidencedBy": {
+        "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_graphdb",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.6",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_graphdb",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "7",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_graphdb",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_graphdb",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Graph Databases & RDF"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_graphdb",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_python",
+      "https://gabrielwalsh.com/ontology#summary": "Primary language for data pipelines, backend services, and ontology tooling."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_python",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.65",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_python",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "8",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_python",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_python",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Python"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_python",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_js",
+      "https://gabrielwalsh.com/ontology#summary": "25 years of JavaScript; TypeScript adopted for all current frontend work."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_js",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.9",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_js",
+      "https://gabrielwalsh.com/ontology#depthYears": {
+        "@value": "25",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_js",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_js",
+      "http://www.w3.org/2000/01/rdf-schema#label": "JavaScript / TypeScript"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#skill_js",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Skill"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_axa",
+      "https://gabrielwalsh.com/ontology#summary": "Global asset management arm of AXA Group."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_axa",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_finance"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_axa",
+      "https://schema.org/location": "London, UK"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_axa",
+      "http://www.w3.org/2000/01/rdf-schema#label": "AXA Investment Managers"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_axa",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_rwj",
+      "https://gabrielwalsh.com/ontology#summary": "Largest US health-focused philanthropy."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_rwj",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_nonprofit"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_rwj",
+      "https://schema.org/location": "Princeton, NJ"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_rwj",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Robert Wood Johnson Foundation"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_rwj",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_jhu",
+      "https://gabrielwalsh.com/ontology#summary": "Graduate continuing education instruction. UX and interaction design."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_jhu",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_education"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_jhu",
+      "https://schema.org/location": "Washington, DC"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_jhu",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Johns Hopkins University"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_jhu",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_mica",
+      "https://gabrielwalsh.com/ontology#summary": "Graduate-level design instruction. MFA program in Graphic Design."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_mica",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_education"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_mica",
+      "https://schema.org/location": "Baltimore, MD"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_mica",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Maryland Institute College of Art"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_mica",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_huge",
+      "https://gabrielwalsh.com/ontology#summary": "Global digital agency. Enterprise and financial services clients."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_huge",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_finance"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_huge",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_enterprise"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_huge",
+      "https://schema.org/location": "Washington, DC"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_huge",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Huge"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_huge",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_threespot",
+      "https://gabrielwalsh.com/ontology#summary": "DC-based digital agency. Mission-driven clients \u2014 nonprofits, foundations, public sector."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_threespot",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_nonprofit"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_threespot",
+      "https://schema.org/location": "Washington, DC"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_threespot",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Threespot"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_threespot",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_lego",
+      "https://gabrielwalsh.com/ontology#summary": "Global toy and learning brand."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_lego",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_creativeTech"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_lego",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_consumerProduct"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_lego",
+      "https://schema.org/location": "NYC / London / Billund, Denmark"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_lego",
+      "http://www.w3.org/2000/01/rdf-schema#label": "LEGO"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_lego",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_adobe",
+      "https://gabrielwalsh.com/ontology#summary": "Enterprise creative software. McLean office, federal / enterprise focus."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_adobe",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_creativeTech"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_adobe",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_enterprise"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_adobe",
+      "https://schema.org/location": "McLean, VA"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_adobe",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Adobe"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_adobe",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_moleskine",
+      "https://gabrielwalsh.com/ontology#summary": "Global consumer brand \u2014 notebooks, digital tools, creative culture."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_moleskine",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_consumerProduct"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_moleskine",
+      "https://schema.org/location": "Milan, Italy"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_moleskine",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Moleskine"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_moleskine",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_oracle",
+      "https://gabrielwalsh.com/ontology#summary": "Enterprise software division focused on utilities and water management."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_oracle",
+      "https://gabrielwalsh.com/ontology#inDomain": {
+        "@id": "https://gabrielwalsh.com/instances#domain_enterprise"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_oracle",
+      "https://schema.org/location": "Austin, TX"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_oracle",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Oracle, Energy & Water"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#org_oracle",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Organization"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_creativeProduction",
+      "https://gabrielwalsh.com/ontology#summary": "Traditional animation, 3D modelling, audio production, film. The art practice running in parallel to the tech practice for 28 years."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_creativeProduction",
+      "https://gabrielwalsh.com/ontology#evidencedBy": {
+        "@id": "https://gabrielwalsh.com/instances#artifact_earthly_frames"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_creativeProduction",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.75",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_creativeProduction",
+      "https://gabrielwalsh.com/ontology#category": "artifact"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_creativeProduction",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Creative Production"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_creativeProduction",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Concept"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_spatialComputing",
+      "https://gabrielwalsh.com/ontology#summary": "Emerging territory: AR/VR/XR, 3D interfaces, AI-physical interaction. Natural extension of 27 years of 3D and physical-digital work."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_spatialComputing",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.55",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_spatialComputing",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_spatialComputing",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Spatial Computing"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_spatialComputing",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Concept"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital",
+      "https://gabrielwalsh.com/ontology#summary": "Designing for bodies and spaces, not just screens. Arduino, Unity, IoT, physical computing, LEGO. Preceded the mainstream IoT moment."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital",
+      "https://gabrielwalsh.com/ontology#ledTo": {
+        "@id": "https://gabrielwalsh.com/instances#concept_spatialComputing"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital",
+      "https://gabrielwalsh.com/ontology#informedBy": {
+        "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.8",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Physical-Digital Integration"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Concept"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture",
+      "https://gabrielwalsh.com/ontology#summary": "Designing systems where AI agents are first-class participants \u2014 MCP, AGUI, LangChain, entity resolution, graph-grounded reasoning."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture",
+      "https://gabrielwalsh.com/ontology#evidencedBy": {
+        "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture",
+      "https://gabrielwalsh.com/ontology#informedBy": {
+        "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture",
+      "https://gabrielwalsh.com/ontology#informedBy": {
+        "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.9",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Agentic Architecture"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Concept"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign",
+      "https://gabrielwalsh.com/ontology#summary": "Formal modelling of domain knowledge: entities, relationships, constraints, inference rules. OWL, SPARQL, LinkML, RDF."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign",
+      "https://gabrielwalsh.com/ontology#evidencedBy": {
+        "@id": "https://gabrielwalsh.com/instances#artifact_portfolio_site"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign",
+      "https://gabrielwalsh.com/ontology#ledTo": {
+        "@id": "https://gabrielwalsh.com/instances#concept_agenticArchitecture"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign",
+      "https://gabrielwalsh.com/ontology#informedBy": {
+        "@id": "https://gabrielwalsh.com/instances#concept_contentModeling"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign",
+      "https://gabrielwalsh.com/ontology#informedBy": {
+        "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.85",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Ontology Design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Concept"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_contentModeling",
+      "https://gabrielwalsh.com/ontology#summary": "Structured content as design material \u2014 taxonomies, controlled vocabularies, content graphs. The bridge from IA to ontology work."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_contentModeling",
+      "https://gabrielwalsh.com/ontology#ledTo": {
+        "@id": "https://gabrielwalsh.com/instances#concept_ontologyDesign"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_contentModeling",
+      "https://gabrielwalsh.com/ontology#informedBy": {
+        "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_contentModeling",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.7",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_contentModeling",
+      "https://gabrielwalsh.com/ontology#category": "strategy"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_contentModeling",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Content Modeling"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_contentModeling",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Concept"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration",
+      "https://gabrielwalsh.com/ontology#summary": "The practice of designing coherent experiences across physical, digital, temporal, and organizational boundaries. The 28-year thread."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration",
+      "https://gabrielwalsh.com/ontology#ledTo": {
+        "@id": "https://gabrielwalsh.com/instances#concept_physicalDigital"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration",
+      "https://gabrielwalsh.com/ontology#ledTo": {
+        "@id": "https://gabrielwalsh.com/instances#concept_contentModeling"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.95",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Experience Integration"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#concept_experienceIntegration",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Concept"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agentic",
+      "https://gabrielwalsh.com/ontology#summary": "Oracle, ontology, MCP, AGUI. Building the infrastructure layer for human-AI interfaces."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agentic",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.95",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agentic",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agentic",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "0",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agentic",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2021",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agentic",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Agentic Architecture"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agentic",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Era"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_international",
+      "https://gabrielwalsh.com/ontology#summary": "Moleskine, Milan. Consumer product meets digital transformation globally. The only period of pure product ownership outside the US."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_international",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.75",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_international",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_international",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2021",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_international",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2017",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_international",
+      "http://www.w3.org/2000/01/rdf-schema#label": "International Product"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_international",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Era"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agency",
+      "https://gabrielwalsh.com/ontology#summary": "Threespot, Huge, Adobe. DC agency work for nonprofits and foundations, then enterprise product design at scale."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agency",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.8",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agency",
+      "https://gabrielwalsh.com/ontology#category": "strategy"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agency",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2017",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agency",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2010",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agency",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Agency & Enterprise"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_agency",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Era"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_lego",
+      "https://gabrielwalsh.com/ontology#summary": "Ten years architecting physical-digital experience integration at global scale across NYC, London, and Denmark. Before IoT was a category."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_lego",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.9",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_lego",
+      "https://gabrielwalsh.com/ontology#category": "design"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_lego",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2010",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_lego",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "2000",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_lego",
+      "http://www.w3.org/2000/01/rdf-schema#label": "The LEGO Decade"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_lego",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Era"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_earlyWeb",
+      "https://gabrielwalsh.com/ontology#summary": "Before web standards, before frameworks. Building digital products as invention \u2014 news sites, film production sites, early interactive work."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_earlyWeb",
+      "https://gabrielwalsh.com/ontology#nodeWeight": {
+        "@value": "0.5",
+        "@type": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_earlyWeb",
+      "https://gabrielwalsh.com/ontology#category": "development"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_earlyWeb",
+      "https://gabrielwalsh.com/ontology#endYear": {
+        "@value": "2000",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_earlyWeb",
+      "https://gabrielwalsh.com/ontology#startYear": {
+        "@value": "1997",
+        "@type": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_earlyWeb",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Early Web"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#era_earlyWeb",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Era"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_finance",
+      "https://gabrielwalsh.com/ontology#summary": "Investment management, banking, financial infrastructure."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_finance",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Financial Services"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_finance",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Domain"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_nonprofit",
+      "https://gabrielwalsh.com/ontology#summary": "Mission-driven organizations, foundations, public-sector clients."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_nonprofit",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Nonprofit / Public Interest"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_nonprofit",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Domain"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_education",
+      "https://gabrielwalsh.com/ontology#summary": "Academic instruction, curriculum design, studio teaching."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_education",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Education"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_education",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Domain"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_creativeTech",
+      "https://gabrielwalsh.com/ontology#summary": "The intersection of artistic practice and technical craft."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_creativeTech",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Creative Technology"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_creativeTech",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Domain"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_consumerProduct",
+      "https://gabrielwalsh.com/ontology#summary": "Direct-to-consumer physical and digital products."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_consumerProduct",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Consumer Product"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_consumerProduct",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Domain"
+      }
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_enterprise",
+      "https://gabrielwalsh.com/ontology#summary": "Large-scale B2B software, internal tooling, data infrastructure."
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_enterprise",
+      "http://www.w3.org/2000/01/rdf-schema#label": "Enterprise Software"
+    },
+    {
+      "@id": "https://gabrielwalsh.com/instances#domain_enterprise",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": {
+        "@id": "https://gabrielwalsh.com/ontology#Domain"
+      }
+    }
+  ]
+}
