@@ -1,0 +1,650 @@
+instances:
+
+  # DOMAINS
+
+  domain_enterprise:
+    instance_of: Domain
+    id: gwi:domain_enterprise
+    label: Enterprise Software
+    summary: Large-scale B2B software, internal tooling, data infrastructure.
+
+  domain_consumerProduct:
+    instance_of: Domain
+    id: gwi:domain_consumerProduct
+    label: Consumer Product
+    summary: Direct-to-consumer physical and digital products.
+
+  domain_creativeTech:
+    instance_of: Domain
+    id: gwi:domain_creativeTech
+    label: Creative Technology
+    summary: The intersection of artistic practice and technical craft.
+
+  domain_education:
+    instance_of: Domain
+    id: gwi:domain_education
+    label: Education
+    summary: Academic instruction, curriculum design, studio teaching.
+
+  domain_nonprofit:
+    instance_of: Domain
+    id: gwi:domain_nonprofit
+    label: Nonprofit / Public Interest
+    summary: Mission-driven organizations, foundations, public-sector clients.
+
+  domain_finance:
+    instance_of: Domain
+    id: gwi:domain_finance
+    label: Financial Services
+    summary: Investment management, banking, financial infrastructure.
+
+  # ERAS
+
+  era_earlyWeb:
+    instance_of: Era
+    id: gwi:era_earlyWeb
+    label: Early Web
+    startYear: 1997
+    endYear: 2000
+    category: development
+    nodeWeight: 0.5
+    summary: >-
+      Before web standards, before frameworks. Building digital products as
+      invention — news sites, film production sites, early interactive work.
+
+  era_lego:
+    instance_of: Era
+    id: gwi:era_lego
+    label: The LEGO Decade
+    startYear: 2000
+    endYear: 2010
+    category: design
+    nodeWeight: 0.9
+    summary: >-
+      Ten years architecting physical-digital experience integration at global
+      scale across NYC, London, and Denmark. Before IoT was a category.
+
+  era_agency:
+    instance_of: Era
+    id: gwi:era_agency
+    label: Agency & Enterprise
+    startYear: 2010
+    endYear: 2017
+    category: strategy
+    nodeWeight: 0.8
+    summary: >-
+      Threespot, Huge, Adobe. DC agency work for nonprofits and foundations,
+      then enterprise product design at scale.
+
+  era_international:
+    instance_of: Era
+    id: gwi:era_international
+    label: International Product
+    startYear: 2017
+    endYear: 2021
+    category: design
+    nodeWeight: 0.75
+    summary: >-
+      Moleskine, Milan. Consumer product meets digital transformation globally.
+      The only period of pure product ownership outside the US.
+
+  era_agentic:
+    instance_of: Era
+    id: gwi:era_agentic
+    label: Agentic Architecture
+    startYear: 2021
+    endYear: 0
+    category: development
+    nodeWeight: 0.95
+    summary: >-
+      Oracle, ontology, MCP, AGUI. Building the infrastructure layer for
+      human-AI interfaces.
+
+  # CONCEPTS
+
+  concept_experienceIntegration:
+    instance_of: Concept
+    id: gwi:concept_experienceIntegration
+    label: Experience Integration
+    category: design
+    nodeWeight: 0.95
+    ledTo:
+      - gwi:concept_contentModeling
+      - gwi:concept_physicalDigital
+    summary: >-
+      The practice of designing coherent experiences across physical, digital,
+      temporal, and organizational boundaries. The 28-year thread.
+
+  concept_contentModeling:
+    instance_of: Concept
+    id: gwi:concept_contentModeling
+    label: Content Modeling
+    category: strategy
+    nodeWeight: 0.7
+    informedBy:
+      - gwi:concept_experienceIntegration
+    ledTo:
+      - gwi:concept_ontologyDesign
+    summary: >-
+      Structured content as design material — taxonomies, controlled
+      vocabularies, content graphs. The bridge from IA to ontology work.
+
+  concept_ontologyDesign:
+    instance_of: Concept
+    id: gwi:concept_ontologyDesign
+    label: Ontology Design
+    category: development
+    nodeWeight: 0.85
+    informedBy:
+      - gwi:concept_experienceIntegration
+      - gwi:concept_contentModeling
+    ledTo:
+      - gwi:concept_agenticArchitecture
+    evidencedBy:
+      - gwi:artifact_portfolio_site
+    summary: >-
+      Formal modelling of domain knowledge: entities, relationships,
+      constraints, inference rules. OWL, SPARQL, LinkML, RDF.
+
+  concept_agenticArchitecture:
+    instance_of: Concept
+    id: gwi:concept_agenticArchitecture
+    label: Agentic Architecture
+    category: development
+    nodeWeight: 0.9
+    informedBy:
+      - gwi:concept_ontologyDesign
+      - gwi:concept_physicalDigital
+    evidencedBy:
+      - gwi:artifact_portfolio_site
+    summary: >-
+      Designing systems where AI agents are first-class participants —
+      MCP, AGUI, LangChain, entity resolution, graph-grounded reasoning.
+
+  concept_physicalDigital:
+    instance_of: Concept
+    id: gwi:concept_physicalDigital
+    label: Physical-Digital Integration
+    category: design
+    nodeWeight: 0.8
+    informedBy:
+      - gwi:concept_experienceIntegration
+    ledTo:
+      - gwi:concept_spatialComputing
+    summary: >-
+      Designing for bodies and spaces, not just screens. Arduino, Unity,
+      IoT, physical computing, LEGO. Preceded the mainstream IoT moment.
+
+  concept_spatialComputing:
+    instance_of: Concept
+    id: gwi:concept_spatialComputing
+    label: Spatial Computing
+    category: development
+    nodeWeight: 0.55
+    summary: >-
+      Emerging territory: AR/VR/XR, 3D interfaces, AI-physical interaction.
+      Natural extension of 27 years of 3D and physical-digital work.
+
+  concept_creativeProduction:
+    instance_of: Concept
+    id: gwi:concept_creativeProduction
+    label: Creative Production
+    category: artifact
+    nodeWeight: 0.75
+    evidencedBy:
+      - gwi:artifact_earthly_frames
+    summary: >-
+      Traditional animation, 3D modelling, audio production, film.
+      The art practice running in parallel to the tech practice for 28 years.
+
+  # ORGANIZATIONS
+
+  org_oracle:
+    instance_of: Organization
+    id: gwi:org_oracle
+    label: Oracle, Energy & Water
+    location: Austin, TX
+    inDomain:
+      - gwi:domain_enterprise
+    summary: Enterprise software division focused on utilities and water management.
+
+  org_moleskine:
+    instance_of: Organization
+    id: gwi:org_moleskine
+    label: Moleskine
+    location: Milan, Italy
+    inDomain:
+      - gwi:domain_consumerProduct
+    summary: Global consumer brand — notebooks, digital tools, creative culture.
+
+  org_adobe:
+    instance_of: Organization
+    id: gwi:org_adobe
+    label: Adobe
+    location: McLean, VA
+    inDomain:
+      - gwi:domain_enterprise
+      - gwi:domain_creativeTech
+    summary: Enterprise creative software. McLean office, federal / enterprise focus.
+
+  org_lego:
+    instance_of: Organization
+    id: gwi:org_lego
+    label: LEGO
+    location: NYC / London / Billund, Denmark
+    inDomain:
+      - gwi:domain_consumerProduct
+      - gwi:domain_creativeTech
+    summary: Global toy and learning brand.
+
+  org_threespot:
+    instance_of: Organization
+    id: gwi:org_threespot
+    label: Threespot
+    location: Washington, DC
+    inDomain:
+      - gwi:domain_nonprofit
+    summary: DC-based digital agency. Mission-driven clients — nonprofits, foundations, public sector.
+
+  org_huge:
+    instance_of: Organization
+    id: gwi:org_huge
+    label: Huge
+    location: Washington, DC
+    inDomain:
+      - gwi:domain_enterprise
+      - gwi:domain_finance
+    summary: Global digital agency. Enterprise and financial services clients.
+
+  org_mica:
+    instance_of: Organization
+    id: gwi:org_mica
+    label: Maryland Institute College of Art
+    location: Baltimore, MD
+    inDomain:
+      - gwi:domain_education
+    summary: Graduate-level design instruction. MFA program in Graphic Design.
+
+  org_jhu:
+    instance_of: Organization
+    id: gwi:org_jhu
+    label: Johns Hopkins University
+    location: Washington, DC
+    inDomain:
+      - gwi:domain_education
+    summary: Graduate continuing education instruction. UX and interaction design.
+
+  org_rwj:
+    instance_of: Organization
+    id: gwi:org_rwj
+    label: Robert Wood Johnson Foundation
+    location: Princeton, NJ
+    inDomain:
+      - gwi:domain_nonprofit
+    summary: Largest US health-focused philanthropy.
+
+  org_axa:
+    instance_of: Organization
+    id: gwi:org_axa
+    label: AXA Investment Managers
+    location: London, UK
+    inDomain:
+      - gwi:domain_finance
+    summary: Global asset management arm of AXA Group.
+
+  # SKILLS
+
+  skill_js:
+    instance_of: Skill
+    id: gwi:skill_js
+    label: JavaScript / TypeScript
+    category: development
+    depthYears: 25
+    nodeWeight: 0.9
+    summary: 25 years of JavaScript; TypeScript adopted for all current frontend work.
+
+  skill_python:
+    instance_of: Skill
+    id: gwi:skill_python
+    label: Python
+    category: development
+    depthYears: 8
+    nodeWeight: 0.65
+    summary: Primary language for data pipelines, backend services, and ontology tooling.
+
+  skill_graphdb:
+    instance_of: Skill
+    id: gwi:skill_graphdb
+    label: Graph Databases & RDF
+    category: development
+    depthYears: 7
+    nodeWeight: 0.6
+    evidencedBy:
+      - gwi:artifact_portfolio_site
+    summary: SPARQL, GraphDB, pyoxigraph, RDF/OWL/TTL.
+
+  skill_mcp:
+    instance_of: Skill
+    id: gwi:skill_mcp
+    label: MCP (Model Context Protocol)
+    category: development
+    depthYears: 1
+    nodeWeight: 0.5
+    evidencedBy:
+      - gwi:artifact_portfolio_site
+    summary: Anthropic's tool protocol for agent-to-tool communication.
+
+  skill_linkml:
+    instance_of: Skill
+    id: gwi:skill_linkml
+    label: LinkML
+    category: development
+    depthYears: 1
+    nodeWeight: 0.5
+    evidencedBy:
+      - gwi:artifact_portfolio_site
+    summary: Schema-first ontology authoring. Generates OWL, Pydantic, JSON-LD, TypeScript from YAML.
+
+  skill_animation3d:
+    instance_of: Skill
+    id: gwi:skill_animation3d
+    label: 3D Modelling & Animation
+    category: design
+    depthYears: 27
+    nodeWeight: 0.95
+    evidencedBy:
+      - gwi:artifact_earthly_frames
+    summary: 27 years. C4D, Blender, Maya. Motion graphics, architectural viz, character animation.
+
+  skill_unity:
+    instance_of: Skill
+    id: gwi:skill_unity
+    label: Unity
+    category: development
+    depthYears: 11
+    nodeWeight: 0.7
+    summary: Interactive 3D, AR/VR prototyping, physical-digital experience prototypes.
+
+  skill_arduino:
+    instance_of: Skill
+    id: gwi:skill_arduino
+    label: Arduino & Physical Computing
+    category: development
+    depthYears: 18
+    nodeWeight: 0.75
+    summary: Embedded systems, sensor integration, tangible interfaces.
+
+  skill_ml:
+    instance_of: Skill
+    id: gwi:skill_ml
+    label: Machine Learning / LLM Pipelines
+    category: development
+    depthYears: 7
+    nodeWeight: 0.7
+    summary: LangChain, RAG, entity resolution, AGUI streaming.
+
+  skill_uxResearch:
+    instance_of: Skill
+    id: gwi:skill_uxResearch
+    label: UX Research
+    category: design
+    depthYears: 20
+    nodeWeight: 0.8
+    summary: Generative and evaluative research. Enterprise and consumer contexts. Qual-heavy.
+
+  skill_productStrategy:
+    instance_of: Skill
+    id: gwi:skill_productStrategy
+    label: Product Strategy
+    category: strategy
+    depthYears: 15
+    nodeWeight: 0.8
+    summary: Product vision, roadmap, stakeholder alignment. IC and leading small teams.
+
+  skill_contentStrategy:
+    instance_of: Skill
+    id: gwi:skill_contentStrategy
+    label: Content Strategy & IA
+    category: strategy
+    depthYears: 18
+    nodeWeight: 0.75
+    summary: Information architecture, content modelling, taxonomy design.
+
+  skill_audioProduction:
+    instance_of: Skill
+    id: gwi:skill_audioProduction
+    label: Audio Production
+    category: design
+    depthYears: 20
+    nodeWeight: 0.7
+    evidencedBy:
+      - gwi:artifact_earthly_frames
+    summary: Electronic music composition, mixing, mastering. 20 years. Full ownership.
+
+  # ARTIFACTS
+
+  artifact_portfolio_site:
+    instance_of: Artifact
+    id: gwi:artifact_portfolio_site
+    label: Portfolio Site
+    mediaType: code
+    url: https://gabrielwalsh.com
+    category: artifact
+    confidential: false
+    nodeWeight: 0.9
+    summary: >-
+      This site. Next.js + LinkML ontology + pyoxigraph + MCP server +
+      AGUI agent interface + 3D force-directed knowledge graph.
+
+  artifact_earthly_frames:
+    instance_of: Artifact
+    id: gwi:artifact_earthly_frames
+    label: Earthly Frames
+    mediaType: audio
+    category: artifact
+    confidential: false
+    nodeWeight: 0.8
+    summary: Original music project. Electronic / ambient. Full ownership.
+
+  # PROJECTS (skeleton — full narrative population is Phase 5)
+
+  proj_lego:
+    instance_of: Project
+    id: gwi:proj_lego
+    label: LEGO Physical-Digital Integration
+    startYear: 2000
+    endYear: 2010
+    confidential: false
+    category: design
+    nodeWeight: 0.9
+    partOfEra:
+      - gwi:era_lego
+    workedAt:
+      - gwi:org_lego
+    engagementType: direct
+    inDomain:
+      - gwi:domain_consumerProduct
+      - gwi:domain_creativeTech
+    involvedConcept:
+      - gwi:concept_experienceIntegration
+      - gwi:concept_physicalDigital
+    usedSkill:
+      - gwi:skill_js
+      - gwi:skill_animation3d
+      - gwi:skill_arduino
+      - gwi:skill_uxResearch
+    summary: >-
+      Ten years architecting the integration of physical play and digital
+      experience across global markets. NYC, London, and Denmark.
+      Before IoT was a category.
+
+  proj_adobe:
+    instance_of: Project
+    id: gwi:proj_adobe
+    label: Adobe Enterprise UX
+    startYear: 2014
+    endYear: 2017
+    confidential: false
+    category: design
+    nodeWeight: 0.75
+    partOfEra:
+      - gwi:era_agency
+    workedAt:
+      - gwi:org_adobe
+    engagementType: direct
+    inDomain:
+      - gwi:domain_enterprise
+    involvedConcept:
+      - gwi:concept_contentModeling
+      - gwi:concept_experienceIntegration
+    usedSkill:
+      - gwi:skill_uxResearch
+      - gwi:skill_productStrategy
+      - gwi:skill_contentStrategy
+    summary: >-
+      Enterprise UX at Adobe's federal and enterprise division in McLean.
+      Design systems, content modelling, product strategy for B2B tools.
+
+  proj_threespot_rwj:
+    instance_of: Project
+    id: gwi:proj_threespot_rwj
+    label: Robert Wood Johnson Foundation Digital Platform
+    startYear: 2011
+    endYear: 2013
+    confidential: false
+    category: strategy
+    nodeWeight: 0.65
+    partOfEra:
+      - gwi:era_agency
+    workedAt:
+      - gwi:org_threespot
+    deliveredFor:
+      - gwi:org_rwj
+    engagementType: embedded
+    inDomain:
+      - gwi:domain_nonprofit
+    involvedConcept:
+      - gwi:concept_contentModeling
+      - gwi:concept_experienceIntegration
+    usedSkill:
+      - gwi:skill_contentStrategy
+      - gwi:skill_uxResearch
+    summary: >-
+      Embedded UX and content strategy lead for the Robert Wood Johnson
+      Foundation's digital platform rebuild. Employed by Threespot,
+      working on-site at RWJF.
+
+  proj_huge_axa:
+    instance_of: Project
+    id: gwi:proj_huge_axa
+    label: AXA Investment Managers UX
+    startYear: 2013
+    endYear: 2014
+    confidential: false
+    category: design
+    nodeWeight: 0.6
+    partOfEra:
+      - gwi:era_agency
+    workedAt:
+      - gwi:org_huge
+    deliveredFor:
+      - gwi:org_axa
+    engagementType: consulting
+    inDomain:
+      - gwi:domain_finance
+    involvedConcept:
+      - gwi:concept_experienceIntegration
+    usedSkill:
+      - gwi:skill_uxResearch
+      - gwi:skill_productStrategy
+    summary: >-
+      UX consulting for AXA Investment Managers through Huge.
+      Digital investor portal redesign. Project-based engagement.
+
+  proj_moleskine:
+    instance_of: Project
+    id: gwi:proj_moleskine
+    label: Moleskine Digital Transformation
+    startYear: 2017
+    endYear: 2021
+    confidential: false
+    category: strategy
+    nodeWeight: 0.8
+    partOfEra:
+      - gwi:era_international
+    workedAt:
+      - gwi:org_moleskine
+    engagementType: direct
+    inDomain:
+      - gwi:domain_consumerProduct
+    involvedConcept:
+      - gwi:concept_experienceIntegration
+      - gwi:concept_contentModeling
+    usedSkill:
+      - gwi:skill_productStrategy
+      - gwi:skill_uxResearch
+      - gwi:skill_contentStrategy
+    summary: >-
+      Product architecture and digital transformation at Moleskine, Milan.
+      Consumer product meets digital platform — global brand, international team.
+
+  proj_oracle:
+    instance_of: Project
+    id: gwi:proj_oracle
+    label: Enterprise Ontology & Agentic Interface
+    startYear: 2021
+    endYear: 0
+    confidential: true
+    category: development
+    nodeWeight: 0.95
+    partOfEra:
+      - gwi:era_agentic
+    workedAt:
+      - gwi:org_oracle
+    engagementType: direct
+    inDomain:
+      - gwi:domain_enterprise
+    involvedConcept:
+      - gwi:concept_ontologyDesign
+      - gwi:concept_agenticArchitecture
+    usedSkill:
+      - gwi:skill_graphdb
+      - gwi:skill_ml
+      - gwi:skill_python
+      - gwi:skill_linkml
+      - gwi:skill_mcp
+    producedArtifact:
+      - gwi:artifact_portfolio_site
+    summary: >-
+      Product architecture at Oracle Energy & Water. Ontology-driven data
+      modelling, agentic pipeline integration, entity resolution
+      infrastructure. Details NDA — graph topology is the evidence.
+
+  proj_teaching:
+    instance_of: Project
+    id: gwi:proj_teaching
+    label: Graduate Design Instruction
+    startYear: 2012
+    endYear: 2018
+    confidential: false
+    category: strategy
+    nodeWeight: 0.55
+    partOfEra:
+      - gwi:era_agency
+    workedAt:
+      - gwi:org_mica
+    engagementType: direct
+    inDomain:
+      - gwi:domain_education
+    involvedConcept:
+      - gwi:concept_experienceIntegration
+    usedSkill:
+      - gwi:skill_uxResearch
+      - gwi:skill_productStrategy
+    taughtAt:
+      - gwi:org_mica
+      - gwi:org_jhu
+    summary: >-
+      Graduate studio instruction at MICA (MFA Graphic Design) and
+      Johns Hopkins continuing education. Interaction design, UX, digital
+      strategy. Concurrent with agency work.

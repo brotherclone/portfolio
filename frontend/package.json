@@ -1,0 +1,11 @@
+{
+  "name": "gabriel-walsh-portfolio-frontend",
+  "version": "1.0.0",
+  "description": "client for portfolio work",
+  "main": "index.ts",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "brotherclone@gmail.com",
+  "license": "MIT"
+}

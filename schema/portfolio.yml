@@ -1,0 +1,285 @@
+id: https://gabrielwalsh.com/ontology
+name: portfolio
+title: Gabriel Walsh Portfolio Ontology
+description: >-
+  Knowledge graph schema for the portfolio of Gabriel Walsh — Creative Technologist /
+  Experience Designer. 28 years of work modelled as a navigable graph of projects,
+  skills, concepts, organizations, artifacts, and career eras.
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  gw:     https://gabrielwalsh.com/ontology#
+  gwi:    https://gabrielwalsh.com/instances#
+  owl:    http://www.w3.org/2002/07/owl#
+  rdfs:   http://www.w3.org/2000/01/rdf-schema#
+  xsd:    http://www.w3.org/2001/XMLSchema#
+  schema: https://schema.org/
+  skos:   http://www.w3.org/2004/02/skos/core#
+
+default_prefix: gw
+default_range: string
+
+imports:
+  - linkml:types
+
+enums:
+
+  CategoryEnum:
+    permissible_values:
+      design:
+        description: Design, UX, visual, motion
+      development:
+        description: Engineering, code, tooling
+      strategy:
+        description: Product strategy, research, leadership
+      artifact:
+        description: Owned creative output
+
+  EngagementTypeEnum:
+    permissible_values:
+      direct:
+        description: Directly employed by the organization
+      embedded:
+        description: Employed by an agency, embedded full-time at client site
+      consulting:
+        description: Engaged on a project basis by the client through an agency
+      freelance:
+        description: Independent freelance engagement directly with client
+
+  MediaTypeEnum:
+    permissible_values:
+      audio:
+      video:
+      code:
+      writing:
+      physical:
+      image:
+      interactive:
+
+classes:
+
+  Entity:
+    abstract: true
+    description: Abstract base for all portfolio entities.
+    slots:
+      - id
+      - label
+      - summary
+      - detail
+      - confidential
+      - nodeWeight
+      - nodeColor
+      - category
+
+  Project:
+    is_a: Entity
+    description: >-
+      A discrete body of work. May be confidential — summary and relationships
+      always visible, detail withheld when gw:confidential is true.
+    slots:
+      - startYear
+      - endYear
+      - workedAt
+      - deliveredFor
+      - engagementType
+      - usedSkill
+      - involvedConcept
+      - producedArtifact
+      - partOfEra
+      - inDomain
+      - relatedTo
+      - taughtAt
+
+  Skill:
+    is_a: Entity
+    description: >-
+      A technical, design, or strategic capability. depthYears encodes
+      how long the skill has been practised — drives node size in the graph.
+    slots:
+      - depthYears
+      - evidencedBy
+      - relatedTo
+
+  Concept:
+    is_a: Entity
+    description: >-
+      A domain concept or intellectual territory — the thematic layer of the graph.
+      Concepts connect eras and skills through ledTo and informedBy edges.
+    slots:
+      - ledTo
+      - informedBy
+      - evidencedBy
+      - relatedTo
+
+  Organization:
+    is_a: Entity
+    description: Employer, client, institution, or collaborator.
+    slots:
+      - url
+      - location
+      - inDomain
+
+  Artifact:
+    is_a: Entity
+    description: >-
+      Owned, showable work — music, animation, code, writing, physical.
+      Primary evidence for creative and technical claims.
+    slots:
+      - url
+      - mediaType
+      - relatedTo
+
+  Era:
+    is_a: Entity
+    description: >-
+      A named temporal period that clusters related work into career chapters.
+      Nodes in the graph, traversable via partOfEra edges.
+    slots:
+      - startYear
+      - endYear
+
+  Domain:
+    is_a: Entity
+    description: Industry or application domain (enterprise, creative tech, education, etc.)
+
+slots:
+
+  id:
+    identifier: true
+    range: uriorcurie
+    required: true
+    description: Canonical URI for this entity.
+
+  label:
+    slot_uri: rdfs:label
+    required: true
+    description: Human-readable name.
+
+  summary:
+    description: >-
+      NDA-safe narrative — always shown regardless of confidential flag.
+      Used by the agent for confidential projects.
+    required: true
+
+  detail:
+    description: >-
+      Full narrative detail — withheld from all API responses when
+      gw:confidential is true on the parent entity.
+
+  confidential:
+    range: boolean
+    ifabsent: "false"
+    description: >-
+      When true, gw:detail is stripped from API responses. Node, edges,
+      and summary remain visible. The graph topology is the evidence.
+
+  url:
+    range: uri
+    description: Public URL for the entity.
+
+  location:
+    description: Geographic location (city, country).
+
+  mediaType:
+    range: MediaTypeEnum
+    description: Type of media for Artifact entities.
+
+  startYear:
+    range: integer
+    description: Year this entity / engagement began.
+
+  endYear:
+    range: integer
+    description: Year this entity / engagement ended. 0 = present / ongoing.
+
+  depthYears:
+    range: integer
+    description: Years of practice for a Skill. Drives node size in the graph.
+
+  nodeWeight:
+    range: float
+    description: Node size hint (0.0-1.0). Larger = deeper investment.
+
+  nodeColor:
+    range: string
+    description: Hex colour or category token for graph rendering.
+
+  category:
+    range: CategoryEnum
+    description: Broad category for colour-coding in the graph.
+
+  engagementType:
+    range: EngagementTypeEnum
+    description: >-
+      How the work was structured. direct = employed by this org.
+      embedded = employed by agency, placed at client.
+      consulting = project-based through agency.
+      freelance = independent direct engagement.
+
+  workedAt:
+    range: Organization
+    multivalued: true
+    description: >-
+      The employing organization. For agency work this is the agency
+      (Threespot, Huge), not the client.
+
+  deliveredFor:
+    range: Organization
+    multivalued: true
+    description: >-
+      The client organization — who the work product was for.
+      Absent for direct employment.
+
+  usedSkill:
+    range: Skill
+    multivalued: true
+    description: Skills exercised on this project.
+
+  involvedConcept:
+    range: Concept
+    multivalued: true
+    description: Domain concepts engaged by this project.
+
+  producedArtifact:
+    range: Artifact
+    multivalued: true
+    description: Showable artifacts that resulted from this project.
+
+  partOfEra:
+    range: Era
+    multivalued: true
+    description: Career era(s) this project belongs to.
+
+  inDomain:
+    range: Domain
+    multivalued: true
+    description: Industry/application domain(s).
+
+  ledTo:
+    range: Concept
+    multivalued: true
+    description: Causal or evolutionary relationship.
+
+  informedBy:
+    range: Concept
+    multivalued: true
+    description: Intellectual lineage.
+
+  evidencedBy:
+    range: Artifact
+    multivalued: true
+    description: Public artifact that evidences this skill or concept claim.
+
+  collaboratedWith:
+    range: Organization
+    multivalued: true
+    description: Organizations collaborated with (non-employment).
+
+  taughtAt:
+    range: Organization
+    multivalued: true
+    description: Academic institutions where teaching was conducted.
+
+  relatedTo:
+    multivalued: true
+    description: Generic weak associative link between any two entities.
