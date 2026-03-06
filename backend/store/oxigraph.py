@@ -47,10 +47,7 @@ class GraphStore:
         var_names = [v.value for v in results.variables]
         rows = []
         for solution in results:
-            row: dict[str, Any] = {
-                name: self._serialize(solution[name])
-                for name in var_names
-            }
+            row: dict[str, Any] = {name: self._serialize(solution[name]) for name in var_names}
             if not self._is_detail_leak(row):
                 rows.append(row)
         return rows

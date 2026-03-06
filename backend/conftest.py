@@ -6,7 +6,6 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import pytest
 from fastapi.testclient import TestClient
-
 from main import app
 from store.oxigraph import GraphStore
 

@@ -4,7 +4,6 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-
 from store.oxigraph import GraphStore
 
 DATA_TTL = Path(__file__).parent.parent / "data" / "portfolio.ttl"
