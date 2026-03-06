@@ -81,8 +81,10 @@ def build_graph_jsonld() -> None:
     dest = REPO / "frontend" / "public" / "graph.jsonld"
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(json.dumps(graph_doc, indent=2))
-    print(f"  wrote {dest.relative_to(REPO)}  ({len(filtered)} triples, "
-          f"{len(confidential_subjects)} confidential subjects filtered)")
+    print(
+        f"  wrote {dest.relative_to(REPO)}  ({len(filtered)} triples, "
+        f"{len(confidential_subjects)} confidential subjects filtered)"
+    )
 
 
 def _quad_to_dict(quad: ox.Quad) -> dict:
@@ -122,7 +124,8 @@ def main() -> None:
     run([*gen, "gen-typescript", str(SCHEMA)], REPO / "frontend" / "src" / "lib" / "types.ts")
 
     print("3. JSON-LD context → frontend/src/lib/context.jsonld")
-    run([*gen, "gen-jsonld-context", str(SCHEMA)], REPO / "frontend" / "src" / "lib" / "context.jsonld")
+    out = REPO / "frontend" / "src" / "lib" / "context.jsonld"
+    run([*gen, "gen-jsonld-context", str(SCHEMA)], out)
 
     print("4. Static graph snapshot → frontend/public/graph.jsonld")
     build_graph_jsonld()
