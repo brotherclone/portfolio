@@ -18,3 +18,4 @@ env/
 ontology/
 backend/entities.py
 frontend/types/generated.ts
+node_modules/
