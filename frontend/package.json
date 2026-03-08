@@ -9,6 +9,7 @@
   "author": "brotherclone@gmail.com",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^22",
     "husky": "^9.1.7",
     "lint-staged": "^16.3.2",
     "typescript": "^5.9.3",

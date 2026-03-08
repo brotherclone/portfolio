@@ -1,3 +1,4 @@
+import os
 from contextlib import asynccontextmanager
 from pathlib import Path
 
@@ -8,9 +9,11 @@ from store.oxigraph import GraphStore
 
 DATA_TTL = Path(__file__).parent.parent / "data" / "portfolio.ttl"
 
+_DEFAULT_ORIGINS = "https://gabrielwalsh.com,http://localhost:3000"
 _ALLOWED_ORIGINS = [
-    "https://gabrielwalsh.com",
-    "http://localhost:3000",
+    o.strip()
+    for o in os.environ.get("ALLOWED_ORIGINS", _DEFAULT_ORIGINS).split(",")
+    if o.strip()
 ]
 
 # SELECT-only guard: reject any query that starts with a write keyword
@@ -33,6 +36,11 @@ app.add_middleware(
     allow_methods=["GET", "OPTIONS"],
     allow_headers=["*"],
 )
+
+
+@app.get("/health")
+def health() -> dict:
+    return {"status": "ok"}
 
 
 @app.get("/api/graph")
