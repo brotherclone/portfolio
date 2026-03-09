@@ -14,7 +14,7 @@ The system SHALL render all portfolio entities and relationships as a 3D force-d
 ---
 
 ### Requirement: Node Visual Encoding
-The system SHALL encode ontology properties as visual node attributes. `gw:nodeWeight` (or `gw:depthYears` normalised) drives node size. `gw:category` drives node color. Entity type drives node shape. Era recency drives node opacity.
+The system SHALL encode ontology properties as visual node attributes. `gw:nodeWeight` (or `gw:depthYears` normalised) drives node size. `gw:category` drives node color. Entity type drives node shape. Era recency drives node opacity. `Era` and `Domain` instances SHALL NOT render as nodes; they appear only as edge metadata.
 
 #### Scenario: Skill node sizing
 - **WHEN** a Skill node has `gw:depthYears 25`
@@ -26,7 +26,11 @@ The system SHALL encode ontology properties as visual node attributes. `gw:nodeW
 
 #### Scenario: Entity type shape
 - **WHEN** nodes are rendered
-- **THEN** Concept nodes use sphere geometry, Project nodes use box, Organization nodes use ring/torus, Artifact nodes use star
+- **THEN** Concept nodes use sphere geometry, Project nodes use box, Organization nodes use torus, Artifact nodes use octahedron, Skill nodes use low-poly sphere
+
+#### Scenario: Era and Domain filtered from nodes
+- **WHEN** the JSON-LD graph data is transformed at mount
+- **THEN** `Era` and `Domain` typed instances are excluded from the nodes array and do not appear as graph nodes
 
 #### Scenario: Era opacity
 - **WHEN** a Project is `partOfEra gwi:era_earlyWeb`
