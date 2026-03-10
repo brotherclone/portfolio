@@ -28,8 +28,8 @@ export type AguiEvent = HighlightNodesEvent | AnimatePathEvent | StreamTextEvent
 // Module-level event bus — withAgui subscribes; AguiEventListener publishes
 // ---------------------------------------------------------------------------
 
-export const aguiBus: EventTarget | null =
-  typeof window !== 'undefined' ? new EventTarget() : null
+export const aguiBus: EventTarget =
+  typeof globalThis.EventTarget !== 'undefined' ? new EventTarget() : (null as unknown as EventTarget)
 
 export function dispatchAguiEvent(event: AguiEvent): void {
   aguiBus?.dispatchEvent(new CustomEvent('agui', { detail: event }))
@@ -45,9 +45,11 @@ export class AguiEventListener {
   private controller: AbortController | null = null
   private retries = 0
   private message: string
+  private sessionId: string
 
-  constructor(message: string) {
+  constructor(message: string, sessionId: string) {
     this.message = message
+    this.sessionId = sessionId
   }
 
   start(): void {
@@ -62,7 +64,7 @@ export class AguiEventListener {
     fetch('/api/agent', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ message: this.message }),
+      body: JSON.stringify({ message: this.message, session_id: this.sessionId }),
       signal,
     })
       .then(res => {

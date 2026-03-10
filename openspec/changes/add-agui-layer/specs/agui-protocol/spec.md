@@ -14,19 +14,32 @@ The system SHALL define a typed AGUI event protocol in `frontend/src/lib/agui.ts
 ---
 
 ### Requirement: AguiEventListener
-The system SHALL implement `AguiEventListener` in `frontend/src/lib/agui.ts` — a class or function that opens an SSE connection to `/api/agent`, parses incoming events into the typed union, and exposes a subscription interface (`subscribe(handler)` / `unsubscribe()`).
+The system SHALL implement `AguiEventListener` in `frontend/src/lib/agui.ts` — a class that opens a fetch-based SSE connection to `POST /api/agent`, parses incoming events into the typed union, and publishes them onto the module-level `aguiBus`. It SHALL accept both a `message` string and a `session_id` string, passing both in the request body.
 
 #### Scenario: Successful connection
-- **WHEN** `AguiEventListener` is initialised with a user message payload
-- **THEN** it opens an SSE connection and begins emitting typed events to all subscribers
+- **WHEN** `AguiEventListener` is initialised with a message and session_id, then `start()` is called
+- **THEN** it opens an SSE connection and begins dispatching typed events onto `aguiBus`
 
 #### Scenario: Connection drop and retry
 - **WHEN** the SSE connection closes unexpectedly before a `ResetEvent` is received
-- **THEN** the listener retries with exponential backoff up to 3 attempts before emitting an error
+- **THEN** the listener retries with exponential backoff up to 3 attempts before emitting a `RESET` to signal failure
 
 #### Scenario: Clean teardown
-- **WHEN** `unsubscribe()` is called
-- **THEN** the SSE connection is closed and no further events are delivered
+- **WHEN** `stop()` is called
+- **THEN** the SSE connection is aborted and no further events are dispatched
+
+---
+
+### Requirement: Session Identity
+The system SHALL implement a `useSession()` hook in `frontend/src/lib/useSession.ts` that generates a `session_id` (UUID v4) once per page load using `crypto.randomUUID()` and returns it stably for the component's lifetime. The `session_id` SHALL be passed to `AguiEventListener` on every conversation turn so the backend can maintain multi-turn context.
+
+#### Scenario: Stable session across turns
+- **WHEN** a user sends multiple messages in the same page session
+- **THEN** each `AguiEventListener` call receives the same `session_id`
+
+#### Scenario: New session on page load
+- **WHEN** the page is reloaded
+- **THEN** a new `session_id` is generated, starting a fresh conversation context on the backend
 
 ---
 
