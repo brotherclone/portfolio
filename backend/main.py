@@ -2,6 +2,7 @@ import json
 import os
 from contextlib import asynccontextmanager
 from pathlib import Path
+from typing import Any
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
@@ -9,6 +10,7 @@ from fastapi.responses import JSONResponse, StreamingResponse
 from pydantic import BaseModel, field_validator
 from store.oxigraph import GraphStore
 from agent.graph_agent import run_agent
+from mcp.tools import make_tools
 
 DATA_TTL = Path(__file__).parent.parent / "data" / "portfolio.ttl"
 
@@ -23,11 +25,13 @@ _ALLOWED_ORIGINS = [
 _WRITE_KEYWORDS = {"insert", "delete", "load", "clear", "create", "drop", "copy", "move", "add"}
 
 store = GraphStore()
+_mcp_tools: dict[str, Any] = {}
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     store.load(DATA_TTL)
+    _mcp_tools.update({t.name: t for t in make_tools(store)})
     yield
 
 
@@ -76,6 +80,49 @@ async def agent_endpoint(request: AgentRequest) -> StreamingResponse:
 @app.get("/health")
 def health() -> dict:
     return {"status": "ok"}
+
+
+# ── MCP JSON-RPC 2.0 endpoint ─────────────────────────────────────────────────
+
+
+class MCPRequest(BaseModel):
+    jsonrpc: str = "2.0"
+    id: Any = None
+    method: str
+    params: dict = {}
+
+
+@app.post("/api/mcp")
+def mcp_endpoint(request: MCPRequest) -> JSONResponse:
+    def ok(result: Any) -> JSONResponse:
+        return JSONResponse({"jsonrpc": "2.0", "id": request.id, "result": result})
+
+    def err(code: int, message: str) -> JSONResponse:
+        return JSONResponse({"jsonrpc": "2.0", "id": request.id, "error": {"code": code, "message": message}})
+
+    if request.method == "tools/list":
+        tool_list = [
+            {
+                "name": t.name,
+                "description": t.description,
+                "inputSchema": t.args_schema.model_json_schema() if t.args_schema else {},
+            }
+            for t in _mcp_tools.values()
+        ]
+        return ok({"tools": tool_list})
+
+    if request.method == "tools/call":
+        tool_name = request.params.get("name")
+        arguments = request.params.get("arguments", {})
+        if tool_name not in _mcp_tools:
+            return err(-32601, f"Tool '{tool_name}' not found")
+        try:
+            result = _mcp_tools[tool_name].invoke(arguments)
+            return ok({"content": [{"type": "text", "text": json.dumps(result)}]})
+        except Exception as exc:
+            return err(-32000, str(exc))
+
+    return err(-32601, f"Method not found: {request.method}")
 
 
 @app.get("/api/graph")

@@ -1,5 +1,5 @@
 """
-MCP tool stubs backed by GraphStore.
+MCP tool implementations backed by GraphStore.
 
 Each tool runs a SPARQL query against the in-memory oxigraph store.
 Returns plain Python values (lists of dicts) that LangChain serialises
@@ -12,11 +12,46 @@ from collections import deque
 from typing import Any
 
 from langchain_core.tools import tool
+from pydantic import BaseModel, field_validator
 
 from store.oxigraph import GraphStore
 
 _RDFS_LABEL = "http://www.w3.org/2000/01/rdf-schema#label"
 _GW = "https://gabrielwalsh.com/ontology#"
+_WRITE_KEYWORDS = {"insert", "delete", "load", "clear", "create", "drop", "copy", "move", "add"}
+
+
+# ── Pydantic v2 input schemas ─────────────────────────────────────────────────
+
+
+class QueryGraphInput(BaseModel):
+    sparql: str
+
+    @field_validator("sparql")
+    @classmethod
+    def select_only(cls, v: str) -> str:
+        first = v.strip().split()[0].lower() if v.strip() else ""
+        if first in _WRITE_KEYWORDS:
+            raise ValueError("Only SELECT queries are permitted.")
+        return v
+
+
+class GetEntityInput(BaseModel):
+    uri: str
+
+
+class TraverseInput(BaseModel):
+    uri: str
+    predicate: str = ""
+
+
+class FindPathInput(BaseModel):
+    from_uri: str
+    to_uri: str
+    max_hops: int = 6
+
+
+# ── helpers ───────────────────────────────────────────────────────────────────
 
 
 def _label_for(uri: str, store: GraphStore) -> str:
@@ -25,7 +60,6 @@ def _label_for(uri: str, store: GraphStore) -> str:
     )
     if rows and rows[0].get("l"):
         return rows[0]["l"].get("value", uri)
-    # fall back to local name
     return uri.rsplit("#", 1)[-1].rsplit("/", 1)[-1]
 
 
@@ -35,20 +69,24 @@ def _uri_val(cell: Any) -> str | None:
     return None
 
 
+# ── tool factory ──────────────────────────────────────────────────────────────
+
+
 def make_tools(store: GraphStore) -> list:
-    @tool
+    @tool(args_schema=QueryGraphInput)
     def query_graph(sparql: str) -> list[dict]:
         """Execute a SPARQL SELECT query against the knowledge graph and return rows."""
         return store.query(sparql)
 
-    @tool
+    @tool(args_schema=GetEntityInput)
     def get_entity(uri: str) -> list[dict]:
         """Return all predicate-object pairs for the given entity URI."""
+        # BIND ?s so the store's confidential filter can suppress gw:detail rows.
         return store.query(
-            f"SELECT ?p ?o WHERE {{ <{uri}> ?p ?o }} ORDER BY ?p"
+            f"SELECT ?s ?p ?o WHERE {{ BIND(<{uri}> AS ?s) . ?s ?p ?o }} ORDER BY ?p"
         )
 
-    @tool
+    @tool(args_schema=TraverseInput)
     def traverse(uri: str, predicate: str = "") -> list[dict]:
         """
         Return nodes reachable from *uri* in one hop.
@@ -71,8 +109,8 @@ def make_tools(store: GraphStore) -> list:
                 result.append({"uri": o_val, "label": _label_for(o_val, store)})
         return result
 
-    @tool
-    def find_path(from_uri: str, to_uri: str, max_hops: int = 3) -> list[dict]:
+    @tool(args_schema=FindPathInput)
+    def find_path(from_uri: str, to_uri: str, max_hops: int = 6) -> list[dict]:
         """
         Find the shortest path between two entities in the knowledge graph.
         Returns an ordered list of {uri, label} dicts; empty list if no path found.
@@ -81,7 +119,6 @@ def make_tools(store: GraphStore) -> list:
             return [{"uri": from_uri, "label": _label_for(from_uri, store)}]
 
         visited: set[str] = {from_uri}
-        # Each queue entry is the path so far (list of URIs)
         queue: deque[list[str]] = deque([[from_uri]])
 
         for _ in range(max(1, max_hops)):
