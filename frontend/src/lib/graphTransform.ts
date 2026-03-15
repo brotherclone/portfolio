@@ -49,6 +49,7 @@ export interface GraphNode {
   /** URI of the era this node belongs to, or null */
   era: string | null
   url?: string
+  mediaType?: string
 }
 
 export interface GraphLink {
@@ -194,6 +195,7 @@ export function transformGraphData(jsonld: { '@graph': Record<string, unknown>[]
     const partOfEraVals = props[`${GW}partOfEra`] ?? []
     const eraUri = partOfEraVals.length > 0 ? (extractValue(partOfEraVals[0]) as string) : null
     const url = extractValue(props[`${GW}url`]?.[0]) as string | undefined
+    const mediaType = extractValue(props[`${GW}mediaType`]?.[0]) as string | undefined
 
     nodes.push({
       id,
@@ -207,6 +209,7 @@ export function transformGraphData(jsonld: { '@graph': Record<string, unknown>[]
       category,
       era: eraUri,
       url,
+      mediaType,
     })
 
     // Extract relationship edges

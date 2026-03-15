@@ -301,7 +301,9 @@ function GraphCanvasBase({ latestEvent }: GraphCanvasProps) {
           {...sharedProps}
           nodeThreeObject={nodeThreeObject}
           nodeThreeObjectExtend={false}
-          backgroundColor="var(--color-bg)"
+          backgroundColor={
+            getComputedStyle(document.documentElement).getPropertyValue('--color-bg').trim() || '#0a0a0f'
+          }
         />
       )}
       {/* Task 3.1 / 4.x — detail panel */}

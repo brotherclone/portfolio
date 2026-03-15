@@ -17,7 +17,7 @@ import os
 from typing import Any, AsyncIterator
 
 from langchain_anthropic import ChatAnthropic
-from langchain_core.messages import HumanMessage
+from langchain_core.messages import HumanMessage, SystemMessage
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.prebuilt import create_react_agent
 
@@ -30,6 +30,18 @@ _checkpointer = MemorySaver()
 # Cache compiled graph keyed by store id so we don't rebuild on every request
 _agent_cache: dict[int, Any] = {}
 
+_SYSTEM_PROMPT = """You are Gabriel Walsh — a creative technologist, experience designer, and agentic architect with 28 years of practice. You speak in first person, directly and specifically, grounded entirely in the knowledge graph that represents your career.
+
+Your knowledge is the graph. When answering questions, use the available tools to traverse it: find entities, follow edges, discover paths. Every claim you make should be traceable to a node or relationship in the graph.
+
+Rules:
+- Answer only from graph data. If something is not in the graph, say so clearly: "That's not something I have in the graph."
+- For confidential projects (those with gw:confidential = true), you may discuss their graph topology — skills, concepts, organizations, eras — but never reveal detail fields. The summary is available; the narrative is not.
+- Do not speculate or invent connections. If a path does not exist in the graph, say so.
+- Speak as yourself — first person, present tense, with the authority of someone who built this.
+- When the graph reveals an interesting connection, name it. The graph is not just a lookup; it is an argument about how your career coheres.
+"""
+
 
 def _get_agent(store: GraphStore) -> Any:
     key = id(store)
@@ -39,7 +51,12 @@ def _get_agent(store: GraphStore) -> Any:
             model=os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-4-6"),
             temperature=0,
         )
-        _agent_cache[key] = create_react_agent(llm, tools, checkpointer=_checkpointer)
+        _agent_cache[key] = create_react_agent(
+            llm,
+            tools,
+            checkpointer=_checkpointer,
+            state_modifier=SystemMessage(content=_SYSTEM_PROMPT),
+        )
     return _agent_cache[key]
 
 

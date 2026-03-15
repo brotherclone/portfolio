@@ -31,9 +31,16 @@
   cursor: pointer;
   line-height: 1;
   padding: 0.25rem 0.5rem;
+  border-radius: 4px;
 }
 
 .close:hover {
+  color: var(--color-text);
+}
+
+.close:focus-visible {
+  outline: 2px solid var(--color-cool);
+  outline-offset: 2px;
   color: var(--color-text);
 }
 
@@ -75,8 +82,22 @@
   font-size: 0.85rem;
   color: var(--color-cool);
   text-decoration: none;
+  border-radius: 2px;
 }
 
 .link:hover {
   text-decoration: underline;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--color-cool);
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+
+.audio {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  accent-color: var(--color-cool);
 }
