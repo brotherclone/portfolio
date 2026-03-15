@@ -38,6 +38,12 @@ instances:
     label: Financial Services
     summary: Investment management, banking, financial infrastructure.
 
+  domain_entertainment:
+    instance_of: Domain
+    id: gwi:domain_entertainment
+    label: Entertainment & Media
+    summary: Film production, broadcast television, cable networks, interactive media.
+
   # ERAS
 
   era_earlyWeb:
@@ -195,7 +201,7 @@ instances:
       - gwi:artifact_earthly_frames
     summary: >-
       Traditional animation, 3D modelling, audio production, film.
-      The art practice running in parallel to the tech practice for 28 years.
+      The art practice running in parallel to the tech practice for 28 years. 
 
   # ORGANIZATIONS
 
@@ -255,6 +261,60 @@ instances:
       - gwi:domain_enterprise
       - gwi:domain_finance
     summary: Global digital agency. Enterprise and financial services clients.
+
+  org_news_digital:
+    instance_of: Organization
+    id: gwi:org_news_digital
+    label: News Digital
+    location: New York, NY
+    inDomain:
+      - gwi:domain_entertainment
+    summary: News sites, film production sites, interactive experiments.
+
+  org_pacific_street_films:
+    instance_of: Organization
+    id: gwi:org_pacific_street_films
+    label: Pacific Street Films
+    location: Hastings-on-Hudson, NY
+    inDomain:
+      - gwi:domain_entertainment
+    summary: Film production and distribution.
+
+  org_oxygen_media:
+    instance_of: Organization
+    id: gwi:org_oxygen_media
+    label: Oxygen Media
+    location: New York, NY
+    inDomain:
+      - gwi:domain_entertainment
+    summary: Cable television network focused on Women's stories. Original programming and interactive content.
+
+  org_stantec:
+    instance_of: Organization
+    id: gwi:org_stantec
+    label: Stantec
+    location: Edmonton, Canada
+    inDomain:
+      - gwi:domain_enterprise
+    summary: Global engineering and architecture consultancy. Infrastructure, buildings, communities.
+
+  org_macarthur:
+    instance_of: Organization
+    id: gwi:org_macarthur
+    label: MacArthur Foundation
+    location: Chicago, IL
+    inDomain:
+      - gwi:domain_nonprofit
+    summary: Private foundation committed to building a more just, verdant, and peaceful world.
+
+  org_knight:
+    instance_of: Organization
+    id: gwi:org_knight
+    label: Knight Foundation
+    location: Miami, FL
+    inDomain:
+      - gwi:domain_nonprofit
+    summary: Foundation focused on journalism, arts, and informed and engaged communities.
 
   org_mica:
     instance_of: Organization
@@ -441,6 +501,7 @@ instances:
     id: gwi:artifact_earthly_frames
     label: Earthly Frames
     mediaType: audio
+    url: https://www.earthlyframes.com
     category: artifact
     confidential: false
     nodeWeight: 0.8
@@ -477,6 +538,73 @@ instances:
       Ten years architecting the integration of physical play and digital
       experience across global markets. NYC, London, and Denmark.
       Before IoT was a category.
+    detail: >-
+      Ten years of varied physical-digital integration work spanning web games,
+      desktop software, early AR, audio experiences, and networked play. Built
+      web games with embedded audio for the Galidor line; contributed to LEGO
+      Digital Designer, a consumer CAD tool for building virtual models. Led
+      concept development for an early AR prototype before the category had a
+      name. Produced a proto-podcast for the Life on Mars campaign. Consulted
+      on LEGO Universe, the brand's MMO. Designed and shipped ARGs, physical
+      card and board games, and dozens of browser-based games across product
+      lines. Closed the decade with My LEGO Network — a children's-safe social
+      network with moderated profiles, trading mechanics, and badge systems.
+
+  proj_interactive_television:
+    instance_of: Project
+    id: gwi:proj_interactive_television
+    label: Interactive Television
+    startYear: 1998
+    endYear: 2000
+    confidential: false
+    category: interactive_television
+    nodeWeight: 0.85
+    partOfEra:
+      - gwi:era_earlyWeb
+    workedAt:
+      - gwi:org_news_digital
+      - gwi:org_oxygen_media
+    engagementType: direct
+    summary: >-
+      Early convergence content for web and proto OTT broadcasts.
+    detail: >-
+      Pioneering interactive television work at the very edge of what the medium
+      could do in 1998. Built SMIL-based hotspot video experiences that loaded
+      onto set-top boxes, layering interactive elements onto news and
+      entertainment content in real time. SMIL — the W3C's Synchronized
+      Multimedia Integration Language — was barely a standard yet; the work
+      meant operating without frameworks, documentation, or precedent, and
+      negotiating the severe constraints of early set-top box hardware. Worked
+      across News Digital and Oxygen Media, the women's cable network, producing
+      convergent web and proto-OTT content before either category had a name.
+      The earliest expression of a pattern that persisted for 25 years: arriving
+      at an intersection before the roads were built.
+
+  proj_television_documentaries:
+    instance_of: Project
+    id: gwi:proj_television_documentaries
+    label: Cable Television Documentaries
+    startYear: 1997
+    endYear: 1998
+    confidential: false
+    category: film_and_television
+    nodeWeight: 0.85
+    partOfEra:
+      - gwi:era_earlyWeb
+    workedAt:
+      - gwi:org_pacific_street_films
+    engagementType: direct
+    summary: >-
+      Documentary content for PBS, Lifetime, A&E. Film production and post-production roles.
+    detail: >-
+      Early career film production work at Pacific Street Films, in the roles of
+      associate producer and researcher. Worked on Intimate Portrait — the
+      Lifetime biographical documentary series — for the Jessica Lange episode.
+      Subsequently contributed to two multi-part documentary series: one
+      exploring the warrior tradition across cultures, from the Samurai to the
+      French Foreign Legion, broadcast on A&E; and a musical history series for
+      PBS. The formative experience that built the editorial instincts and
+      storytelling discipline that run through everything that came after.
 
   proj_adobe:
     instance_of: Project
@@ -503,7 +631,21 @@ instances:
       - gwi:skill_contentStrategy
     summary: >-
       Enterprise UX at Adobe's federal and enterprise division in McLean.
-      Design systems, content modelling, product strategy for B2B tools.
+      Design systems, content modelling, product strategy the Intelligence Sector.
+    detail: >-
+      Enterprise UX at Adobe's federal division in McLean, serving the US
+      intelligence community. Primary engagement: designed a classified
+      publication system for the CIA with granular redaction controls — the
+      workflow that produces the President's Daily Briefing. Secondary
+      engagement: worked with the Open Source Center to design a multi-feed
+      video capture and intelligence-gathering system for monitoring foreign
+      broadcasts. A parallel challenge ran through both projects: a new
+      generation of analysts entering the intelligence community had grown up
+      on consumer software and found legacy tools impenetrable — closing that
+      gap between defence-grade rigor and consumer-grade usability was the core
+      design problem. Both engagements permanently shaped how I think about
+      content modelling, permissioning, and designing for zero-tolerance error
+      states.
 
   proj_threespot_rwj:
     instance_of: Project
@@ -520,6 +662,8 @@ instances:
       - gwi:org_threespot
     deliveredFor:
       - gwi:org_rwj
+      - gwi:org_macarthur
+      - gwi:org_knight
     engagementType: embedded
     inDomain:
       - gwi:domain_nonprofit
@@ -533,11 +677,25 @@ instances:
       Embedded UX and content strategy lead for the Robert Wood Johnson
       Foundation's digital platform rebuild. Employed by Threespot,
       working on-site at RWJF.
+    detail: >-
+      Embedded full-time at the Robert Wood Johnson Foundation as UX and
+      content strategy lead for a ground-up rebuild of their digital platform.
+      The core design challenge was dual audience: the platform needed to
+      surface content by grant program — palliative medicine, childhood obesity,
+      health equity — for foundation staff and grantees, while simultaneously
+      organizing the same content by subject matter for the broader research
+      community and grant seekers. Designed a modular publication system with a
+      flexible taxonomy that served both traversal modes without requiring
+      duplicate content authoring. During the same period, delivered similar
+      content strategy and IA engagements for the MacArthur Foundation and the
+      Knight Foundation on a consulting basis. The concentration of major
+      philanthropy work in this window cemented content modelling as a design
+      discipline for me.
 
   proj_huge_axa:
     instance_of: Project
     id: gwi:proj_huge_axa
-    label: AXA Investment Managers UX
+    label: Stantec & AXA — Huge
     startYear: 2013
     endYear: 2014
     confidential: false
@@ -549,17 +707,30 @@ instances:
       - gwi:org_huge
     deliveredFor:
       - gwi:org_axa
+      - gwi:org_stantec
     engagementType: consulting
     inDomain:
       - gwi:domain_finance
+      - gwi:domain_enterprise
     involvedConcept:
       - gwi:concept_experienceIntegration
     usedSkill:
       - gwi:skill_uxResearch
       - gwi:skill_productStrategy
     summary: >-
-      UX consulting for AXA Investment Managers through Huge.
-      Digital investor portal redesign. Project-based engagement.
+      Two major client engagements at Huge: a redesign for Stantec putting a
+      human face on engineering consulting, and an iOS app for AXA to drive
+      403(b) retirement enrollment among K-12 teachers.
+    detail: >-
+      Two major engagements during a short stint at Huge. First: a comprehensive
+      redesign for Stantec, the global engineering consultancy, aimed at putting
+      a more human face on their technical practice — repositioning a firm known
+      for infrastructure and engineering toward a story about people, places, and
+      community impact. Second: an iOS app for AXA Investment Managers targeted
+      at K-12 teachers, designed to demystify 403(b) retirement accounts and
+      drive enrollment. Both projects shared a similar brief — translating
+      complex, expertise-driven offerings into approachable consumer-facing
+      experiences.
 
   proj_moleskine:
     instance_of: Project
@@ -587,6 +758,18 @@ instances:
     summary: >-
       Product architecture and digital transformation at Moleskine, Milan.
       Consumer product meets digital platform — global brand, international team.
+    detail: >-
+      Four years as product architect at Moleskine's Milan headquarters, spanning
+      two major initiatives. The first was a partnership with IBM to build a
+      personalized creativity platform — combining machine learning with
+      Moleskine's content library to generate tailored plans of drawing, writing,
+      and mindfulness exercises for individual users. The second centred on
+      Moleskine's digital pen, a device that captured handwriting on smart paper
+      and bridged analog and digital workflows — designed apps and managed
+      partnerships that extended the pen ecosystem across third-party platforms
+      and creative tools. Both projects sat at the same intersection: analogue
+      identity meeting digital capability, at a brand whose entire equity is
+      built on the romance of the physical.
 
   proj_oracle:
     instance_of: Project
@@ -648,3 +831,20 @@ instances:
       Graduate studio instruction at MICA (MFA Graphic Design) and
       Johns Hopkins continuing education. Interaction design, UX, digital
       strategy. Concurrent with agency work.
+    detail: >-
+      Graduate studio instruction at MICA's MFA Graphic Design program and
+      Johns Hopkins continuing education, running concurrently with agency work.
+      At MICA, taught a utility design course built on a specific thesis: that
+      the tactile vocabulary of early electronic components — switches,
+      potentiometers, buttons, dials — established the foundational heuristics
+      of interface expectation. Students traced that lineage from physical
+      affordance through skeuomorphic UI to flat design, then used those
+      heuristics as a critical lens for interrogating when and why to invent new
+      interface elements versus honouring established convention. At JHU, the
+      brief was entirely different: journalism and communications students who
+      had never touched creative production tools, in a media landscape that was
+      getting scrappier by the semester. The course was deliberately DIY in
+      tone — students shipped podcasts, social video, interactive articles, and
+      infographics, with urgency and resourcefulness valued over polish. Two
+      very different rooms, the same underlying conviction that making things is
+      how you understand them.

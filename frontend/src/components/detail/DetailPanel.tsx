@@ -22,6 +22,7 @@ export function getDisplayContent(node: GraphNode) {
     // this check is an explicit safety belt
     detail: node.confidential ? undefined : node.detail,
     url: node.url,
+    mediaType: node.mediaType,
   }
 }
 
@@ -43,11 +44,17 @@ export function DetailPanel({ node, onClose }: Props) {
 
   if (!node || !mounted) return null
 
-  const { label, summary, detail, url } = getDisplayContent(node)
+  const { label, summary, detail, url, mediaType } = getDisplayContent(node)
 
   return createPortal(
-    <div className={styles.backdrop} onClick={onClose}>
-      <div className={styles.panel} onClick={e => e.stopPropagation()}>
+    <div className={styles.backdrop} onClick={onClose} role="presentation">
+      <div
+        className={styles.panel}
+        onClick={e => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label={label}
+      >
         <button className={styles.close} onClick={onClose} aria-label="Close panel">
           ×
         </button>
@@ -55,7 +62,12 @@ export function DetailPanel({ node, onClose }: Props) {
         <h2 className={styles.label}>{label}</h2>
         <p className={styles.summary}>{summary}</p>
         {detail && <p className={styles.detail}>{detail}</p>}
-        {url && (
+        {mediaType === 'audio' && url && (
+          <audio className={styles.audio} controls src={url} aria-label={`Listen to ${label}`}>
+            Your browser does not support the audio element.
+          </audio>
+        )}
+        {mediaType !== 'audio' && url && (
           <a className={styles.link} href={url} target="_blank" rel="noopener noreferrer">
             View artifact ↗
           </a>
