@@ -8,9 +8,6 @@ from pathlib import Path
 from urllib.parse import quote
 
 import pyoxigraph as ox
-import pytest
-from fastapi.testclient import TestClient
-
 from store.oxigraph import GraphStore
 
 DATA_TTL = Path(__file__).parent.parent.parent / "data" / "portfolio.ttl"
@@ -21,6 +18,7 @@ RDFS = "http://www.w3.org/2000/01/rdf-schema#"
 
 # ── 5.1 TTL loads without error ───────────────────────────────────────────────
 
+
 def test_ttl_loads_into_pyoxigraph():
     """portfolio.ttl parses cleanly; pyoxigraph raises no error."""
     s = ox.Store()
@@ -29,6 +27,7 @@ def test_ttl_loads_into_pyoxigraph():
 
 
 # ── 5.2 SPARQL over seed data ─────────────────────────────────────────────────
+
 
 def test_five_eras(store):
     """Exactly 5 Era instances in the graph."""
@@ -77,6 +76,7 @@ def test_direct_employment_has_no_delivered_for(store):
 
 
 # ── 5.3 Confidentiality gating ───────────────────────────────────────────────
+
 
 def test_confidential_detail_withheld(store):
     """gw:detail absent from SPARQL results for confidential proj_oracle."""
@@ -132,6 +132,7 @@ def test_non_confidential_detail_present():
 
 
 # ── 5.4 Integration: HTTP endpoint ───────────────────────────────────────────
+
 
 def test_endpoint_returns_five_eras(client):
     """GET /api/graph returns 5 Era results."""

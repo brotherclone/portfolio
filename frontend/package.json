@@ -4,8 +4,29 @@
   "description": "client for portfolio work",
   "main": "index.ts",
   "scripts": {
-    "test": "test"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "test": "vitest run"
   },
   "author": "brotherclone@gmail.com",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-force-graph": "^1.44.0",
+    "react-force-graph-3d": "^1.24.0",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.170.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.2",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
 }

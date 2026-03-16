@@ -17,6 +17,10 @@ export enum CategoryEnum {
     strategy = "strategy",
     /** Owned creative output */
     artifact = "artifact",
+    /** Film production, documentary, broadcast television */
+    film_and_television = "film_and_television",
+    /** Convergent web and proto-OTT interactive content */
+    interactive_television = "interactive_television",
 };
 
 export enum EngagementTypeEnum {

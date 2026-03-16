@@ -32,6 +32,10 @@ enums:
         description: Product strategy, research, leadership
       artifact:
         description: Owned creative output
+      film_and_television:
+        description: Film production, documentary, broadcast television
+      interactive_television:
+        description: Convergent web and proto-OTT interactive content
 
   EngagementTypeEnum:
     permissible_values:
