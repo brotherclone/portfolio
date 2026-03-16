@@ -1,0 +1,86 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[5].use[3]!./src/components/detail/DetailPanel.module.css ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************/
+.DetailPanel_backdrop__cVk_9 {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.DetailPanel_panel__JLj5y {
+  position: relative;
+  width: min(420px, 90vw);
+  height: 100vh;
+  background: var(--color-surface);
+  border-left: 1px solid var(--color-border);
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.DetailPanel_close__TKYL2 {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.25rem 0.5rem;
+}
+
+.DetailPanel_close__TKYL2:hover {
+  color: var(--color-text);
+}
+
+.DetailPanel_type__0j1Tt {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.DetailPanel_label__PqP_Y {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  color: var(--color-text);
+  padding-right: 2rem;
+}
+
+.DetailPanel_summary__74Nj2 {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0 0 1rem;
+}
+
+.DetailPanel_detail__owMtw {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  margin: 0 0 1rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+
+.DetailPanel_link__SX9Tb {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-cool);
+  text-decoration: none;
+}
+
+.DetailPanel_link__SX9Tb:hover {
+  text-decoration: underline;
+}
+
