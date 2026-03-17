@@ -33,7 +33,7 @@
 
 ## 6. Smoke Test & Decommission
 
-- [ ] 6.1 Open `https://gabrielwalsh.com` — confirm graph renders with ontology data, no console errors
-- [ ] 6.2 Confirm `/api/graph` calls succeed from production frontend to Railway backend
+- [x] 6.1 Open `https://gabrielwalsh.com` — confirm graph renders with ontology data, no console errors
+- [x] 6.2 Confirm `/api/graph` calls succeed from production frontend to Railway backend
 - [x] 6.3 Scale Heroku app to 0 dynos
 - [ ] 6.4 Schedule Heroku app for deletion after 7-day confirmation window
