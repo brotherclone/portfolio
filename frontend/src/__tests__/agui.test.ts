@@ -63,6 +63,24 @@ describe('AGUI state machine', () => {
     expect(latestEvent).toBeNull()
   })
 
+  it('RENDER_ENTITY_CARD passes through state machine without throwing', () => {
+    const event: AguiEvent = {
+      type: 'RENDER_ENTITY_CARD',
+      payload: { uri: 'gwi:proj_a', label: 'Project A', type: 'Project', summary: 'A project' },
+    }
+    const result = applyAguiEvent(event, { highlighted: new Set(), animated: new Set() })
+    expect(result.latestEvent).toEqual(event)
+  })
+
+  it('RENDER_PATH_SUMMARY passes through state machine without throwing', () => {
+    const event: AguiEvent = {
+      type: 'RENDER_PATH_SUMMARY',
+      payload: { nodes: [{ uri: 'gwi:a', label: 'A' }, { uri: 'gwi:b', label: 'B' }] },
+    }
+    const result = applyAguiEvent(event, { highlighted: new Set(), animated: new Set() })
+    expect(result.latestEvent).toEqual(event)
+  })
+
   it('event union is exhaustive — unknown types pass through without throwing', () => {
     // Simulates the "discard unknown event types" requirement
     const unknown = { type: 'UNKNOWN_EVENT' } as unknown as AguiEvent

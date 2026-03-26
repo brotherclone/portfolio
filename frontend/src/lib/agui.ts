@@ -22,7 +22,33 @@ export type ResetEvent = {
   payload?: never
 }
 
-export type AguiEvent = HighlightNodesEvent | AnimatePathEvent | StreamTextEvent | ResetEvent
+export type RenderEntityCardEvent = {
+  type: 'RENDER_ENTITY_CARD'
+  payload: {
+    uri: string
+    label: string
+    type: string
+    summary: string
+    detail?: string
+    url?: string
+    mediaType?: string
+  }
+}
+
+export type RenderPathSummaryEvent = {
+  type: 'RENDER_PATH_SUMMARY'
+  payload: {
+    nodes: Array<{ uri: string; label: string; type?: string }>
+  }
+}
+
+export type AguiEvent =
+  | HighlightNodesEvent
+  | AnimatePathEvent
+  | StreamTextEvent
+  | ResetEvent
+  | RenderEntityCardEvent
+  | RenderPathSummaryEvent
 
 // ---------------------------------------------------------------------------
 // Module-level event bus — withAgui subscribes; AguiEventListener publishes
@@ -61,7 +87,8 @@ export class AguiEventListener {
     this.controller = new AbortController()
     const { signal } = this.controller
 
-    fetch('/api/agent', {
+    const apiBase = (process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:8000').replace(/\/$/, '')
+    fetch(`${apiBase}/api/agent`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: this.message, session_id: this.sessionId }),

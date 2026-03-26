@@ -1,14 +1,30 @@
 # agui-protocol Specification
 
 ## Purpose
-TBD - created by archiving change add-agui-layer. Update Purpose after archive.
+Typed event protocol bridging the LangGraph backend agent to the frontend graph visualization and chat panel. All AGUI events are streamed as SSE from `POST /api/agent`.
+
 ## Requirements
 ### Requirement: AGUI Event Types
-The system SHALL define a typed AGUI event protocol in `frontend/src/lib/agui.ts` covering all events the agent can emit. Every event MUST have a `type` discriminant and a typed `payload`.
+The system SHALL define a typed AGUI event protocol in `frontend/src/lib/agui.ts` covering all events the agent can emit. Every event MUST have a `type` discriminant and a typed `payload`. The union SHALL include: `HighlightNodesEvent`, `AnimatePathEvent`, `StreamTextEvent`, `ResetEvent`, `RenderEntityCardEvent`, `RenderPathSummaryEvent`.
+
+`RenderEntityCardEvent` payload: `{ uri, label, type, summary, detail?, url?, mediaType? }`.
+`RenderPathSummaryEvent` payload: `{ nodes: Array<{ uri, label, type? }> }`.
 
 #### Scenario: Event union is exhaustive
 - **WHEN** the frontend receives an SSE message
-- **THEN** it can be narrowed to one of `HighlightNodesEvent | AnimatePathEvent | StreamTextEvent | ResetEvent` without a catch-all branch
+- **THEN** it can be narrowed to one of the six event types without a catch-all branch
+
+#### Scenario: EntityCard event is narrowable
+- **WHEN** an SSE message arrives with `type: "RENDER_ENTITY_CARD"`
+- **THEN** it narrows to `RenderEntityCardEvent` without a catch-all
+
+#### Scenario: PathSummary event is narrowable
+- **WHEN** an SSE message arrives with `type: "RENDER_PATH_SUMMARY"`
+- **THEN** it narrows to `RenderPathSummaryEvent` without a catch-all
+
+#### Scenario: Confidential entity card omits detail
+- **WHEN** the backend emits a `RENDER_ENTITY_CARD` for a confidential entity
+- **THEN** the payload does NOT include a `detail` field
 
 #### Scenario: Unknown event type
 - **WHEN** an SSE message arrives with an unrecognised `type` field

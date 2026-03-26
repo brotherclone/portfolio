@@ -38,7 +38,7 @@ describe('AguiEventListener', () => {
     listener.stop()
 
     expect(mockFetch).toHaveBeenCalledWith(
-      '/api/agent',
+      expect.stringMatching(/\/api\/agent$/),
       expect.objectContaining({
         method: 'POST',
         body: JSON.stringify({ message: 'hello', session_id: 'test-session-123' }),
