@@ -2,6 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
+import { ChatPanel } from '@/components/chat/ChatPanel'
 
 const GraphCanvas = dynamic(
   () => import('@/components/graph/GraphCanvas'),
@@ -28,14 +29,20 @@ export default function HomePage() {
         position: 'absolute',
         bottom: '2rem',
         left: '2rem',
-        maxWidth: '32rem',
-        color: 'var(--color-text-muted)',
-        fontSize: '0.875rem',
-        lineHeight: 1.6,
-        pointerEvents: 'none',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.75rem',
+        maxWidth: '28rem',
       }}>
-        {/* TODO: replace with final copy — voice ref: "What isn't experience?" */}
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <div style={{ pointerEvents: 'none', paddingLeft: '0.25rem' }}>
+          <p style={{ margin: 0, fontSize: '1rem', fontWeight: 600, color: 'var(--color-text)', lineHeight: 1.2 }}>
+            Gabriel Walsh
+          </p>
+          <p style={{ margin: 0, fontSize: '0.8rem', color: 'var(--color-text-muted)', lineHeight: 1.4 }}>
+            Creative technologist. Experience architect.
+          </p>
+        </div>
+        <ChatPanel />
       </div>
     </main>
   )

@@ -2,10 +2,12 @@
 LangGraph ReAct agent that drives the AGUI event stream.
 
 Events emitted per turn:
-  HIGHLIGHT_NODES  — after find_path / traverse tool returns
-  ANIMATE_PATH     — after find_path returns an ordered path
-  STREAM_TEXT      — during synthesis (text chunks from the LLM)
-  RESET            — once the full turn is complete
+  HIGHLIGHT_NODES      — after find_path / traverse tool returns
+  ANIMATE_PATH         — after find_path returns an ordered path
+  RENDER_ENTITY_CARD   — after get_entity returns a labelled result
+  RENDER_PATH_SUMMARY  — after find_path returns an ordered path
+  STREAM_TEXT          — during synthesis (text chunks from the LLM)
+  RESET                — once the full turn is complete
 
 Multi-turn memory is provided by MemorySaver keyed on session_id → thread_id.
 """
@@ -55,7 +57,7 @@ def _get_agent(store: GraphStore) -> Any:
             llm,
             tools,
             checkpointer=_checkpointer,
-            state_modifier=SystemMessage(content=_SYSTEM_PROMPT),
+            prompt=SystemMessage(content=_SYSTEM_PROMPT),
         )
     return _agent_cache[key]
 
@@ -93,6 +95,12 @@ async def run_agent(
                 nodes = _extract_nodes(output)
                 if nodes:
                     yield {"type": "ANIMATE_PATH", "payload": {"nodes": nodes}}
+                    yield {"type": "RENDER_PATH_SUMMARY", "payload": {"nodes": nodes}}
+
+            if tool_name == "get_entity":
+                card = _extract_entity_card(output)
+                if card:
+                    yield {"type": "RENDER_ENTITY_CARD", "payload": card}
 
         elif kind == "on_chat_model_stream":
             chunk = event.get("data", {}).get("chunk")
@@ -118,6 +126,33 @@ def _extract_uris(output: Any) -> list[str]:
             if isinstance(uri, str) and uri.startswith("http"):
                 uris.append(uri)
     return uris
+
+
+def _extract_entity_card(output: Any) -> dict | None:
+    """Build a RENDER_ENTITY_CARD payload from get_entity output. Returns None if not renderable."""
+    if not isinstance(output, dict):
+        return None
+    label = output.get("label")
+    if not label:
+        return None
+    card: dict = {
+        "uri": output.get("uri", ""),
+        "label": label,
+        "type": output.get("type", ""),
+        "summary": output.get("summary", ""),
+    }
+    # Apply confidentiality gate — only include detail if not confidential
+    if not output.get("confidential"):
+        detail = output.get("detail")
+        if detail:
+            card["detail"] = detail
+    url = output.get("url")
+    if url:
+        card["url"] = url
+    media_type = output.get("mediaType") or output.get("media_type")
+    if media_type:
+        card["mediaType"] = media_type
+    return card
 
 
 def _extract_nodes(output: Any) -> list[dict]:

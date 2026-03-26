@@ -10,9 +10,18 @@ The system SHALL implement a LangGraph `StateGraph` agent in `backend/agent/grap
 - **WHEN** the agent calls `find_path` and receives a result
 - **THEN** it emits a `HIGHLIGHT_NODES` event containing the returned URI list before synthesising the text response
 
-#### Scenario: find_path emits animate path
+#### Scenario: find_path emits animate path and path summary
 - **WHEN** the agent calls `find_path` and the result is an ordered node sequence
-- **THEN** it emits an `ANIMATE_PATH` event with `nodes: [{uri, label}]` before synthesising
+- **THEN** it emits an `ANIMATE_PATH` event followed by a `RENDER_PATH_SUMMARY` event, both with the same `nodes: [{uri, label}]` list
+
+#### Scenario: get_entity emits EntityCard
+- **WHEN** the agent calls `get_entity` and receives a result with a `label`
+- **THEN** it emits `RENDER_ENTITY_CARD` before synthesising the text response
+- **AND** the payload includes `uri`, `label`, `type`, `summary`, and `detail` only if the entity is not confidential
+
+#### Scenario: get_entity empty result suppresses card
+- **WHEN** the agent calls `get_entity` and receives an empty dict
+- **THEN** no `RENDER_ENTITY_CARD` event is emitted
 
 #### Scenario: Synthesis emits stream text
 - **WHEN** the agent enters the synthesis node
