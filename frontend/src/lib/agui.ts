@@ -42,6 +42,11 @@ export type RenderPathSummaryEvent = {
   }
 }
 
+export type FocusNodeEvent = {
+  type: 'FOCUS_NODE'
+  payload: { uri: string; label: string }
+}
+
 export type AguiEvent =
   | HighlightNodesEvent
   | AnimatePathEvent
@@ -49,6 +54,7 @@ export type AguiEvent =
   | ResetEvent
   | RenderEntityCardEvent
   | RenderPathSummaryEvent
+  | FocusNodeEvent
 
 // ---------------------------------------------------------------------------
 // Module-level event bus — withAgui subscribes; AguiEventListener publishes

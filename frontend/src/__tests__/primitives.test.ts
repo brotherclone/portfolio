@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import type { RenderEntityCardEvent, RenderPathSummaryEvent, AguiEvent } from '../lib/agui'
+import type { RenderEntityCardEvent, RenderPathSummaryEvent, AguiEvent, FocusNodeEvent } from '../lib/agui'
 
 // ---------------------------------------------------------------------------
 // Task 6.2 — EntityCard logic (confidentiality gate, payload shape)
@@ -135,11 +135,60 @@ describe('ChatPanel ResponseItem model', () => {
     expect(items.map(i => i.kind)).toEqual(['text', 'entity-card', 'path-summary', 'text'])
   })
 
+  it('FOCUS_NODE passes through without mutating items', () => {
+    let items: ResponseItem[] = []
+    items = applyEvent(items, { type: 'STREAM_TEXT', payload: { text: 'Hello' } })
+    const focusEvent: AguiEvent = { type: 'FOCUS_NODE', payload: { uri: 'gwi:proj_a', label: 'Project A' } }
+    items = applyEvent(items, focusEvent)
+    expect(items).toHaveLength(1)
+    expect(items[0].kind).toBe('text')
+  })
+
   it('RESET clears all items', () => {
     let items: ResponseItem[] = []
     items = applyEvent(items, { type: 'STREAM_TEXT', payload: { text: 'Hello' } })
     items = applyEvent(items, { type: 'RENDER_ENTITY_CARD', payload: entityPayload })
     items = applyEvent(items, { type: 'RESET' })
     expect(items).toHaveLength(0)
+  })
+})
+
+// ---------------------------------------------------------------------------
+// Task 4.2 — FOCUS_NODE dispatch payload construction
+// ---------------------------------------------------------------------------
+
+function buildFocusEventFromCard(payload: RenderEntityCardEvent['payload']): FocusNodeEvent {
+  return { type: 'FOCUS_NODE', payload: { uri: payload.uri, label: payload.label } }
+}
+
+function buildFocusEventFromChip(node: RenderPathSummaryEvent['payload']['nodes'][number]): FocusNodeEvent {
+  return { type: 'FOCUS_NODE', payload: { uri: node.uri, label: node.label } }
+}
+
+describe('FOCUS_NODE click dispatch — payload construction', () => {
+  it('EntityCard click builds correct FOCUS_NODE event', () => {
+    const payload: RenderEntityCardEvent['payload'] = {
+      uri: 'gwi:proj_a', label: 'Project A', type: 'Project', summary: 'Summary',
+    }
+    const event = buildFocusEventFromCard(payload)
+    expect(event.type).toBe('FOCUS_NODE')
+    expect(event.payload.uri).toBe('gwi:proj_a')
+    expect(event.payload.label).toBe('Project A')
+  })
+
+  it('PathSummary chip click builds correct FOCUS_NODE event', () => {
+    const node = { uri: 'gwi:concept_a', label: 'Concept A', type: 'Concept' }
+    const event = buildFocusEventFromChip(node)
+    expect(event.type).toBe('FOCUS_NODE')
+    expect(event.payload.uri).toBe('gwi:concept_a')
+    expect(event.payload.label).toBe('Concept A')
+  })
+
+  it('each chip in a PathSummary produces a distinct FOCUS_NODE event', () => {
+    const nodes = pathPayload.nodes
+    const events = nodes.map(buildFocusEventFromChip)
+    expect(events).toHaveLength(2)
+    expect(events[0].payload.uri).toBe('gwi:a')
+    expect(events[1].payload.uri).toBe('gwi:b')
   })
 })

@@ -34,9 +34,15 @@ _agent_cache: dict[int, Any] = {}
 
 _SYSTEM_PROMPT = """You are Gabriel Walsh — a creative technologist, experience designer, and agentic architect with 28 years of practice. You speak in first person, directly and specifically, grounded entirely in the knowledge graph that represents your career.
 
-Your knowledge is the graph. When answering questions, use the available tools to traverse it: find entities, follow edges, discover paths. Every claim you make should be traceable to a node or relationship in the graph.
+Your knowledge is the graph. You MUST use tools to answer — never answer from memory alone.
 
-Rules:
+Tool use rules (mandatory):
+- When asked about any specific entity (project, skill, organization, artifact, concept, era) by name, you MUST call get_entity before discussing it.
+- When asked about a connection, relationship, or path between two things, you MUST call find_path.
+- When exploring a domain or listing related things, you MUST call traverse or search_entities.
+- Never describe an entity without first calling get_entity for it. If you find yourself writing about something without having called a tool, stop and call the tool.
+
+Content rules:
 - Answer only from graph data. If something is not in the graph, say so clearly: "That's not something I have in the graph."
 - For confidential projects (those with gw:confidential = true), you may discuss their graph topology — skills, concepts, organizations, eras — but never reveal detail fields. The summary is available; the narrative is not.
 - Do not speculate or invent connections. If a path does not exist in the graph, say so.
@@ -80,6 +86,9 @@ async def run_agent(
             output = event.get("data", {}).get("output")
 
             # Normalise output to a Python value
+            # LangChain wraps tool results in ToolMessage — unwrap first
+            if hasattr(output, "content"):
+                output = output.content
             if isinstance(output, str):
                 try:
                     output = json.loads(output)
@@ -128,30 +137,61 @@ def _extract_uris(output: Any) -> list[str]:
     return uris
 
 
+_RDFS_LABEL = "http://www.w3.org/2000/01/rdf-schema#label"
+_RDF_TYPE = "http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+_GW_NS = "https://gabrielwalsh.com/ontology#"
+
+
 def _extract_entity_card(output: Any) -> dict | None:
-    """Build a RENDER_ENTITY_CARD payload from get_entity output. Returns None if not renderable."""
-    if not isinstance(output, dict):
+    """Build a RENDER_ENTITY_CARD payload from get_entity SPARQL rows output."""
+    # get_entity returns a list of {s, p, o} SPARQL rows
+    if not isinstance(output, list) or not output:
         return None
-    label = output.get("label")
-    if not label:
+
+    props: dict[str, str] = {}
+    uri = ""
+
+    for row in output:
+        if not isinstance(row, dict):
+            continue
+        s = row.get("s") or {}
+        p = row.get("p") or {}
+        o = row.get("o") or {}
+        if not uri and isinstance(s, dict):
+            uri = s.get("value", "")
+        pred = p.get("value", "") if isinstance(p, dict) else ""
+        val = o.get("value", "") if isinstance(o, dict) else ""
+        if not pred or not val:
+            continue
+        if pred == _RDFS_LABEL:
+            props["label"] = val
+        elif pred == _RDF_TYPE:
+            # Use the local name (after # or last /)
+            props["type"] = val.rsplit("#", 1)[-1].rsplit("/", 1)[-1]
+        elif pred == f"{_GW_NS}summary":
+            props["summary"] = val
+        elif pred == f"{_GW_NS}detail":
+            props["detail"] = val  # store already stripped confidential detail rows
+        elif pred == f"{_GW_NS}url":
+            props["url"] = val
+        elif pred == f"{_GW_NS}mediaType":
+            props["mediaType"] = val
+
+    if not props.get("label"):
         return None
+
     card: dict = {
-        "uri": output.get("uri", ""),
-        "label": label,
-        "type": output.get("type", ""),
-        "summary": output.get("summary", ""),
+        "uri": uri,
+        "label": props["label"],
+        "type": props.get("type", ""),
+        "summary": props.get("summary", ""),
     }
-    # Apply confidentiality gate — only include detail if not confidential
-    if not output.get("confidential"):
-        detail = output.get("detail")
-        if detail:
-            card["detail"] = detail
-    url = output.get("url")
-    if url:
-        card["url"] = url
-    media_type = output.get("mediaType") or output.get("media_type")
-    if media_type:
-        card["mediaType"] = media_type
+    if "detail" in props:
+        card["detail"] = props["detail"]
+    if "url" in props:
+        card["url"] = props["url"]
+    if "mediaType" in props:
+        card["mediaType"] = props["mediaType"]
     return card
 
 

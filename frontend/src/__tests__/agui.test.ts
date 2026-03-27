@@ -81,6 +81,18 @@ describe('AGUI state machine', () => {
     expect(result.latestEvent).toEqual(event)
   })
 
+  it('FOCUS_NODE passes through state machine with latestEvent set', () => {
+    const event: AguiEvent = {
+      type: 'FOCUS_NODE',
+      payload: { uri: 'gwi:proj_a', label: 'Project A' },
+    }
+    const result = applyAguiEvent(event, { highlighted: new Set(), animated: new Set() })
+    expect(result.latestEvent).toEqual(event)
+    // FOCUS_NODE should not mutate highlighted or animated
+    expect(result.highlighted.size).toBe(0)
+    expect(result.animated.size).toBe(0)
+  })
+
   it('event union is exhaustive — unknown types pass through without throwing', () => {
     // Simulates the "discard unknown event types" requirement
     const unknown = { type: 'UNKNOWN_EVENT' } as unknown as AguiEvent
