@@ -21,6 +21,7 @@ export function PathSummary({ nodes }: Props) {
       {nodes.map((node, i) => (
         <span key={node.uri} className={styles.segment}>
           <button
+            type="button"
             className={styles.chip}
             style={{ borderColor: node.type ? (TYPE_COLOR[node.type] ?? 'var(--color-border)') : 'var(--color-border)' }}
             onClick={() => dispatchAguiEvent({ type: 'FOCUS_NODE', payload: { uri: node.uri, label: node.label } })}
