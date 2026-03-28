@@ -1,13 +1,19 @@
 'use client'
 
-import type { RenderEntityCardEvent } from '@/lib/agui'
-import styles from './EntityCard.module.css'
+import { dispatchAguiEvent, type RenderEntityCardEvent } from '@/lib/agui'
+import styles from './EntityCard.module.scss'
 
 type Props = RenderEntityCardEvent['payload']
 
-export function EntityCard({ label, type, summary, detail, url, mediaType }: Props) {
+export function EntityCard({ uri, label, type, summary, detail, url, mediaType }: Props) {
   return (
-    <div className={styles.card}>
+    <div
+      className={styles.card}
+      onClick={() => dispatchAguiEvent({ type: 'FOCUS_NODE', payload: { uri, label } })}
+      role="button"
+      tabIndex={0}
+      onKeyDown={e => e.key === 'Enter' && dispatchAguiEvent({ type: 'FOCUS_NODE', payload: { uri, label } })}
+    >
       <p className={styles.type}>{type}</p>
       <h3 className={styles.label}>{label}</h3>
       <p className={styles.summary}>{summary}</p>

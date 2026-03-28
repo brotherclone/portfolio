@@ -21,10 +21,6 @@ The entire card SHALL be interactive: clicking it SHALL dispatch a `FOCUS_NODE` 
 - **WHEN** the user clicks an `EntityCard`
 - **THEN** a `FOCUS_NODE` event is dispatched onto `aguiBus` with the card's `uri` and `label`
 
----
-
-## MODIFIED Requirements
-
 ### Requirement: PathSummary primitive
 The system SHALL implement `frontend/src/components/primitives/PathSummary.tsx`. It SHALL accept a `RenderPathSummaryEvent['payload']` as its props and render the `nodes` array as a horizontal sequence of chips separated by arrow glyphs (`→`). Each chip shows the node label. Chips SHALL use entity-type colour hints from `var(--color-*)` tokens where `type` is available. When the node list overflows the panel width, it SHALL wrap to multiple lines.
 

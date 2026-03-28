@@ -2,7 +2,6 @@
 
 ## Purpose
 Typed event protocol bridging the LangGraph backend agent to the frontend graph visualization and chat panel. All AGUI events are streamed as SSE from `POST /api/agent`.
-
 ## Requirements
 ### Requirement: AGUI Event Types
 The system SHALL define a typed AGUI event protocol in `frontend/src/lib/agui.ts` covering all events the agent can emit. Every event MUST have a `type` discriminant and a typed `payload`. The union SHALL include: `HighlightNodesEvent`, `AnimatePathEvent`, `StreamTextEvent`, `ResetEvent`, `RenderEntityCardEvent`, `RenderPathSummaryEvent`.
@@ -76,4 +75,15 @@ The system SHALL implement a `withAgui(Component)` HOC in `frontend/src/componen
 #### Scenario: Reset clears event history
 - **WHEN** the agent emits a `RESET` event
 - **THEN** `aguiEvents` is cleared to `[]` and `latestEvent` is `null` on next render
+
+### Requirement: FocusNodeEvent
+The system SHALL add `FocusNodeEvent` to the `AguiEvent` union in `frontend/src/lib/agui.ts`. Its payload SHALL be `{ uri: string; label: string }`. It SHALL be dispatched exclusively from the frontend (never emitted by the backend agent) when the user clicks a node reference in the chat panel.
+
+#### Scenario: FocusNodeEvent is narrowable
+- **WHEN** an event on `aguiBus` has `type: "FOCUS_NODE"`
+- **THEN** it narrows to `FocusNodeEvent` with `payload.uri` and `payload.label` accessible
+
+#### Scenario: Event union remains exhaustive
+- **WHEN** `FocusNodeEvent` is added to the union
+- **THEN** all existing switch/discriminant type guards continue to compile without a catch-all
 

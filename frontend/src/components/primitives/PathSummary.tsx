@@ -1,7 +1,7 @@
 'use client'
 
-import type { RenderPathSummaryEvent } from '@/lib/agui'
-import styles from './PathSummary.module.css'
+import { dispatchAguiEvent, type RenderPathSummaryEvent } from '@/lib/agui'
+import styles from './PathSummary.module.scss'
 
 type Props = RenderPathSummaryEvent['payload']
 
@@ -20,12 +20,14 @@ export function PathSummary({ nodes }: Props) {
     <div className={styles.path}>
       {nodes.map((node, i) => (
         <span key={node.uri} className={styles.segment}>
-          <span
+          <button
+            type="button"
             className={styles.chip}
             style={{ borderColor: node.type ? (TYPE_COLOR[node.type] ?? 'var(--color-border)') : 'var(--color-border)' }}
+            onClick={() => dispatchAguiEvent({ type: 'FOCUS_NODE', payload: { uri: node.uri, label: node.label } })}
           >
             {node.label}
-          </span>
+          </button>
           {i < nodes.length - 1 && <span className={styles.arrow}>→</span>}
         </span>
       ))}

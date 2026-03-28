@@ -94,7 +94,10 @@ function GraphCanvasBase({ latestEvent }: GraphCanvasProps) {
   const colorsRef = useRef<ColorPalette | null>(null)
   const meshCache = useRef<Map<string, THREE.Mesh>>(new Map())
   const highlightedUris = useRef<Set<string>>(new Set())
-  const graphRef = useRef<{ refresh(): void } | null>(null)
+  const graphRef = useRef<{
+    refresh(): void
+    cameraPosition(pos: object, lookAt: object, duration: number): void
+  } | null>(null)
   const rafRef = useRef<number | null>(null)
   const pulsePhase = useRef(0)
 
@@ -166,6 +169,19 @@ function GraphCanvasBase({ latestEvent }: GraphCanvasProps) {
     } else if (latestEvent.type === 'ANIMATE_PATH') {
       const edges = inferPathEdges(latestEvent.payload.nodes)
       setAnimatedEdges(new Set(edges.map(e => `${e.source}::${e.target}`)))
+    } else if (latestEvent.type === 'FOCUS_NODE') {
+      const node = graphData?.nodes.find(n => n.id === latestEvent.payload.uri) as
+        | (GraphNode & { x?: number; y?: number; z?: number })
+        | undefined
+      if (
+        node &&
+        node.x !== undefined &&
+        node.y !== undefined &&
+        node.z !== undefined
+      ) {
+        const { x, y, z } = node
+        graphRef.current?.cameraPosition({ x, y, z: z + 200 }, { x, y, z }, 800)
+      }
     } else if (latestEvent.type === 'RESET') {
       // Reset highlighted nodes to original state
       highlightedUris.current = new Set()

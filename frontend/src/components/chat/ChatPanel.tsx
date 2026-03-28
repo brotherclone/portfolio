@@ -1,11 +1,12 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { AguiEventListener, aguiBus, type AguiEvent, type RenderEntityCardEvent, type RenderPathSummaryEvent } from '@/lib/agui'
+import { AguiEventListener, aguiBus, type AguiEvent, type RenderEntityCardEvent, type RenderPathSummaryEvent, type BlockPayload } from '@/lib/agui'
 import { useSession } from '@/lib/useSession'
 import { EntityCard } from '@/components/primitives/EntityCard'
 import { PathSummary } from '@/components/primitives/PathSummary'
-import styles from './ChatPanel.module.css'
+import { Block } from '@/components/primitives/Block'
+import styles from './ChatPanel.module.scss'
 
 // ---------------------------------------------------------------------------
 // Response item model — text chunks and primitives interleaved in order
@@ -14,7 +15,8 @@ import styles from './ChatPanel.module.css'
 type TextItem = { kind: 'text'; text: string }
 type EntityCardItem = { kind: 'entity-card'; payload: RenderEntityCardEvent['payload'] }
 type PathSummaryItem = { kind: 'path-summary'; payload: RenderPathSummaryEvent['payload'] }
-type ResponseItem = TextItem | EntityCardItem | PathSummaryItem
+type BlockItem = { kind: 'block'; payload: BlockPayload }
+type ResponseItem = TextItem | EntityCardItem | PathSummaryItem | BlockItem
 
 // ---------------------------------------------------------------------------
 // ChatPanel
@@ -50,6 +52,8 @@ export function ChatPanel() {
         setItems(prev => [...prev, { kind: 'entity-card', payload: event.payload }])
       } else if (event.type === 'RENDER_PATH_SUMMARY') {
         setItems(prev => [...prev, { kind: 'path-summary', payload: event.payload }])
+      } else if (event.type === 'RENDER_BLOCK') {
+        setItems(prev => [...prev, { kind: 'block', payload: event.payload }])
       } else if (event.type === 'RESET') {
         setStreaming(false)
         setTimeout(() => inputRef.current?.focus(), 0)
@@ -93,7 +97,13 @@ export function ChatPanel() {
             if (item.kind === 'entity-card') {
               return <EntityCard key={i} {...item.payload} />
             }
-            return <PathSummary key={i} {...item.payload} />
+            if (item.kind === 'path-summary') {
+              return <PathSummary key={i} {...item.payload} />
+            }
+            if (item.kind === 'block') {
+              return <Block key={i} block={item.payload} />
+            }
+            return null
           })}
           <div ref={responseEndRef} />
         </div>
