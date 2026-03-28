@@ -173,8 +173,13 @@ function GraphCanvasBase({ latestEvent }: GraphCanvasProps) {
       const node = graphData?.nodes.find(n => n.id === latestEvent.payload.uri) as
         | (GraphNode & { x?: number; y?: number; z?: number })
         | undefined
-      if (node && node.x !== undefined && node.y !== undefined) {
-        const { x, y, z = 0 } = node
+      if (
+        node &&
+        node.x !== undefined &&
+        node.y !== undefined &&
+        node.z !== undefined
+      ) {
+        const { x, y, z } = node
         graphRef.current?.cameraPosition({ x, y, z: z + 200 }, { x, y, z }, 800)
       }
     } else if (latestEvent.type === 'RESET') {
