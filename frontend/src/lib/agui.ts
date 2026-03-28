@@ -47,6 +47,18 @@ export type FocusNodeEvent = {
   payload: { uri: string; label: string }
 }
 
+export type BlockPayload =
+  | { type: 'header'; text: string; level?: 1 | 2 | 3 }
+  | { type: 'paragraph'; text: string }
+  | { type: 'image'; src: string; caption?: string }
+  | { type: 'button'; label: string; href: string }
+  | { type: 'badge_row'; badges: string[] }
+
+export type RenderBlockEvent = {
+  type: 'RENDER_BLOCK'
+  payload: BlockPayload
+}
+
 export type AguiEvent =
   | HighlightNodesEvent
   | AnimatePathEvent
@@ -55,6 +67,7 @@ export type AguiEvent =
   | RenderEntityCardEvent
   | RenderPathSummaryEvent
   | FocusNodeEvent
+  | RenderBlockEvent
 
 // ---------------------------------------------------------------------------
 // Module-level event bus — withAgui subscribes; AguiEventListener publishes

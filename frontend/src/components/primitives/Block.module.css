@@ -1,0 +1,65 @@
+.header {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0.75rem 0 0.25rem;
+}
+
+.paragraph {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0.25rem 0;
+}
+
+.figure {
+  margin: 0.5rem 0;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+}
+
+.caption {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+}
+
+.button {
+  display: inline-block;
+  margin: 0.4rem 0.4rem 0.4rem 0;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.78rem;
+  color: var(--color-cool);
+  border: 1px solid var(--color-cool);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin: 0.4rem 0;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  white-space: nowrap;
+}
