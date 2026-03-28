@@ -1,7 +1,7 @@
 'use client'
 
 import type { BlockPayload } from '@/lib/agui'
-import styles from './Block.module.css'
+import styles from './Block.module.scss'
 
 type Props = { block: BlockPayload }
 

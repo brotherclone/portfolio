@@ -1,7 +1,7 @@
 'use client'
 
 import { dispatchAguiEvent, type RenderEntityCardEvent } from '@/lib/agui'
-import styles from './EntityCard.module.css'
+import styles from './EntityCard.module.scss'
 
 type Props = RenderEntityCardEvent['payload']
 

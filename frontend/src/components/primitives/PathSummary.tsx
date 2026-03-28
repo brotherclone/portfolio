@@ -1,7 +1,7 @@
 'use client'
 
 import { dispatchAguiEvent, type RenderPathSummaryEvent } from '@/lib/agui'
-import styles from './PathSummary.module.css'
+import styles from './PathSummary.module.scss'
 
 type Props = RenderPathSummaryEvent['payload']
 

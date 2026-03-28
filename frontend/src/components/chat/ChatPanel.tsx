@@ -6,7 +6,7 @@ import { useSession } from '@/lib/useSession'
 import { EntityCard } from '@/components/primitives/EntityCard'
 import { PathSummary } from '@/components/primitives/PathSummary'
 import { Block } from '@/components/primitives/Block'
-import styles from './ChatPanel.module.css'
+import styles from './ChatPanel.module.scss'
 
 // ---------------------------------------------------------------------------
 // Response item model — text chunks and primitives interleaved in order

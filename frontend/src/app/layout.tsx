@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import '@/styles/tokens.css'
+import '@/styles/tokens.scss'
 
 export const metadata: Metadata = {
   title: 'Gabriel Walsh — Portfolio',

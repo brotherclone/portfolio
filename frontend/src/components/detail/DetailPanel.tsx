@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { GraphNode } from '@/lib/graphTransform'
-import styles from './DetailPanel.module.css'
+import styles from './DetailPanel.module.scss'
 
 interface Props {
   node: GraphNode | null
